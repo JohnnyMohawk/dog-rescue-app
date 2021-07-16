@@ -6,8 +6,14 @@
   <nav>
     <% if (user) { %>
       <a href="/auth/logout">
-        <button type="submit">Logout</button>
+        <button type="submit">LOGOUT</button>
       </a>
+      <a 
+      href="/dogs/new" <%- title === 'Add Dog' ? 'class="active"' : '' %>
+    ><button type="submit">ADD DOG</button></a>
+    <a 
+      href="/dogs" <%- title === 'All Dogs' ? 'class="active"' : '' %>
+    ><button type="submit">ALL DOGS</button></a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
