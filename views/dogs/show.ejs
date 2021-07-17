@@ -20,5 +20,35 @@
         <div><%= `${dog.fixed}` %> </div>
         <div>Health:</div>
         <div><%= `${dog.health}` %> </div>
+        <div>Parvo Vaccs Rec:</div>
+        <div><%= `${dog.vaccination.parvoRec}` %> </div>
+        <div>Next Dose Due:</div>
+        <div><%= `${dog.vaccination.parvoDueNext}` %> </div>
+        <div>Distemper Vaccs Rec:</div>
+        <div><%= `${dog.vaccination.distRec}` %> </div>
+        <div>Next Dose Due:</div>
+        <div><%= `${dog.vaccination.distDueNext}` %> </div>
+        <div>Hepatitis Vaccs Rec:</div>
+        <div><%= `${dog.vaccination.hepRec}` %> </div>
+        <div>Next Dose Due:</div>
+        <div><%= `${dog.vaccination.hepDueNext}` %> </div>
+        <div>Rabies Vaccs Rec:</div>
+        <div><%= `${dog.vaccination.rabiesRec}` %> </div>
+        <div>Next Dose Due:</div>
+        <div><%= `${dog.vaccination.rabiesDueNext}` %> </div>
+        <div>Friendly with Humans:</div>
+        <div><%= `${dog.behavior.humans}` %> </div>
+        <div>Friendly with Children:</div>
+        <div><%= `${dog.behavior.kids}` %> </div>
+        <div>Likes Other Dogs:</div>
+        <div><%= `${dog.behavior.otherDogs}` %> </div>
+        <div>Likes Cats:</div>
+        <div><%= `${dog.behavior.cats}` %> </div>
+        <div>House Trained:</div>
+        <div><%= `${dog.behavior.houseBroken}` %> </div>
+        <div>Energy Level 1 - 5:</div>
+        <div><%= `${dog.behavior.energy}` %> </div>
     </section>
 </main>
+
+<%- include('../partials/footer') %>
