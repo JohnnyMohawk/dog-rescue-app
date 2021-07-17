@@ -14,6 +14,23 @@ function newDog(req, res){
     })
 }
 
+// function create(req, res){
+//     // console.log('1: ', req.body)
+//     for(let key in req.body){
+//         if(req.body[key] === '') delete req.body[key]
+//     }
+//     // console.log('2: ', req.body)
+//     const dog = new Dog(req.body)
+//     console.log('DOG DATA', dog)
+//     dog.save(function(error) {
+//         if (error) return res.render('dogs/new', {
+//             title: 'Dog Intake',
+//             user: req.user
+//         })
+//         res.redirect('/dogs')
+//     })
+// }
+
 function create(req, res){
     console.log('1: ', req.body)
     for(let key in req.body){
@@ -23,13 +40,13 @@ function create(req, res){
     const dog = new Dog(req.body)
     console.log('FINAL', dog, req.body)
     dog.save(function(error) {
-        if (error) return res.render('dogs/new', {
-            title: 'Dog Intake',
-            user: req.user
-        })
+        if (error) {
+          console.log(error)
+          return res.redirect('/dogs/new')
+        }
         res.redirect('/dogs')
     })
-}
+  }
 
 function index(req, res){
     Dog.find({}, function(error, dogs){
