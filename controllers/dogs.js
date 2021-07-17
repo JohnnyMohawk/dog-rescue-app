@@ -5,6 +5,7 @@ export {
     create,
     index,
     show,
+    deleteDog as delete,
 }
 
 function newDog(req, res){
@@ -31,22 +32,29 @@ function newDog(req, res){
 //     })
 // }
 
+function deleteDog(req, res){
+    Dog.findByIdAndDelete(req.params.id, function(error, dog){
+        res.redirect('/dogs')
+    })
+}
+
 function create(req, res){
-    console.log('1: ', req.body)
+    req.body.adoptable = !!req.body.adoptable
+    // console.log('1: ', req.body)
     for(let key in req.body){
         if(req.body[key] === '') delete req.body[key]
     }
-    console.log('2: ', req.body)
+    // console.log('2: ', req.body)
     const dog = new Dog(req.body)
-    console.log('FINAL', dog, req.body)
+    console.log('FINAL', dog)
     dog.save(function(error) {
         if (error) {
-          console.log(error)
-          return res.redirect('/dogs/new')
+            console.log(error)
+            return res.redirect('/dogs/new')
         }
         res.redirect('/dogs')
     })
-  }
+}
 
 function index(req, res){
     Dog.find({}, function(error, dogs){

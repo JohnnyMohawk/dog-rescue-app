@@ -12,6 +12,7 @@
                 <th>Breed</th>
                 <th>Adoptable</th>
                 <th>Details</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,9 @@
                 <td><%= dog.breed %></td>
                 <td><%= dog.adoptable %></td>
                 <td><a href="/dogs/<%= dog._id %>">DETAILS</a></td>
+                <td><form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">DELETE</button>
+                </form></td>
             </tr>
             <% }) %> 
         </tbody>

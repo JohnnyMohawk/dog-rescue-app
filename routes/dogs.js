@@ -10,6 +10,8 @@ router.get('/:id', dogsCtrl.show)
 
 router.post('/', dogsCtrl.create)
 
+router.delete('/:id', dogsCtrl.delete)
+
 export {
     router
 }
