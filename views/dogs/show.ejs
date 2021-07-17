@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/dogs/show.css" />
+<%- include('../partials/nav') %>
+<main>
+    <h1><%= title %> </h1>
+    <section>
+        <div>Name:</div>
+        <div><%= `${dog.name}` %> </div>
+        <div>Age:</div>
+        <div><%= `${dog.age}` %> </div>
+        <div>Breed:</div>
+        <div><%= `${dog.breed}` %> </div>
+        <div>Weight:</div>
+        <div><%= `${dog.weight}` %> </div>
+        <div>Ideal Weight:</div>
+        <div><%= `${dog.idealWeight}` %> </div>
+        <div>Coat:</div>
+        <div><%= `${dog.coat}` %> </div>
+        <div>Fixed:</div>
+        <div><%= `${dog.fixed}` %> </div>
+        <div>Health:</div>
+        <div><%= `${dog.health}` %> </div>
+    </section>
+</main>
