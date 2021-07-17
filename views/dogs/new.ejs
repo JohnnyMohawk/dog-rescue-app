@@ -5,8 +5,11 @@
 <main>
     <h1><%= title %></h1>
     <form action="/dogs" id="new-form" method="POST">
-        <input type="text" name="name" id="name-input" placeholder="NAME" required>
-        <input type="number" name="age" id="age-input" min="0" max="20" placeholder="AGE" required>
+        <label for="name">Dog's Name:</label>
+        <input type="text" name="name" id="name-input" placeholder="If none given, PICK ONE!" required autocomplete="off">
+        <label for="age">Age / Approximate Age:</label>
+        <input type="number" name="age" id="age-input" min="0" max="20" placeholder="If none given, guess" required autocomplete="off">
+        <label for="breed">Breed:</label>
         <select type="text" name="breed" id="breed-input" required>
             <option value="Mixed" selected>Mixed Breed</option>
             <option value="Pit Bull">Pit Bull</option>
@@ -24,10 +27,18 @@
             <option value="Spaniel">Spaniel</option>
             <option value="Mastiff">Mastiff</option>
         </select>
-        <input type="number" name="weight" id="weight" min="1" max="200" placeholder="Weight in LBS" required>
-        <input type="number" name="idealWeight" id="idealWeight" min="1" max="200" placeholder="Ideal Weight" required>
-        <input type="text" name="coat" id="coat" placeholder="Describe Coat" required>
-        <input type="checkbox" name="fixed" id="fixed">
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight" id="weight" min="1" max="200" placeholder="Current Weight in LBS" required autocomplete="off">
+        <label for="idealWeight">Ideal Weight:</label>
+        <input type="number" name="idealWeight" id="idealWeight" min="1" max="200" placeholder="Ideal Weight" required autocomplete="off">
+        <label for="coat">Coat:</label>
+        <input type="text" name="coat" id="coat" placeholder="Describe Coat" required autocomplete="off">
+        <label for="fixed">Fertility Status</label>
+        <select type="text" name="fixed" id="fixed-input" required>
+            <option value="unknown" selected>Unknown</option>
+            <option value="fixed">Fixed</option>
+            <option value="intact">Intact</option>
+        </select>
         <button type="submit" value="Add Dog">Add Dog</button>
     </form>
 </main>
