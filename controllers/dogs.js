@@ -9,7 +9,8 @@ export {
 
 function newDog(req, res){
     res.render('dogs/new', {
-        title: 'Dog Intake'
+        title: 'Dog Intake',
+        user: req.user
     })
 }
 
@@ -31,6 +32,7 @@ function index(req, res){
             error: error,
             dogs: dogs,
             title: 'All Dogs',
+            user: req.user
         })
     })
 }
@@ -40,6 +42,7 @@ function show(req, res){
         res.render('dogs/show', {
             title: 'Dog Details',
             dog: dog,
+            user: req.user,
             error: error,
         })
     })
