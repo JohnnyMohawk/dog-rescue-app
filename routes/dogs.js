@@ -12,6 +12,8 @@ router.get('/behavior/:dog_id', dogsCtrl.addBehavior)
 
 router.post('/:id', dogsCtrl.createVaccsLog)
 
+// router.post('/:id', dogsCtrl.createBehaviorTag)
+
 router.get('/:id', dogsCtrl.show)
 
 router.post('/', dogsCtrl.create)

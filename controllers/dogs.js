@@ -7,6 +7,7 @@ export {
     show,
     deleteDog as delete,
     createVaccsLog,
+    createBehaviorTag,
     addVaccs,
     addBehavior,
 }
@@ -17,14 +18,6 @@ function newDog(req, res){
         user: req.user
     })
 }
-
-// function addVaccs(req, res){
-//     console.log('is this working')
-//     res.render('dogs/vaccines', {
-//         title: 'Vaccination Form',
-//         user: req.user
-//     })
-// }
 
 function addVaccs(req, res) {
     Dog.findById(req.params.dog_id, function (err, dog) {
@@ -50,20 +43,24 @@ function addBehavior(req, res) {
     })
 }
 
-// function create(req, res){
-//     // console.log('1: ', req.body)
-//     for(let key in req.body){
-//         if(req.body[key] === '') delete req.body[key]
-//     }
-//     // console.log('2: ', req.body)
-//     const dog = new Dog(req.body)
-//     console.log('DOG DATA', dog)
-//     dog.save(function(error) {
-//         if (error) return res.render('dogs/new', {
-//             title: 'Dog Intake',
-//             user: req.user
+// function createVaccsLog(req, res){
+//     req.body.parvo = !!req.body.parvo
+//     req.body.distemper = !!req.body.distemper
+//     req.body.hepatitis = !!req.body.hepatitis
+//     req.body.rabies = !!req.body.rabies
+//     req.body.humans = !!req.body.humans
+//     req.body.kids = !!req.body.kids
+//     req.body.otherDogs = !!req.body.otherDogs
+//     req.body.cats = !!req.body.cats
+//     req.body.houseBroken = !!req.body.houseBroken
+//     Dog.findById(req.params.id, function(error, dog){
+//         console.log(req.body)
+//         dog.vaccination.push(req.body)
+//         dog.behavior.push(req.body)
+//         dog.save(error => {
+//             res.redirect(`/dogs/${dog._id}`)
 //         })
-//         res.redirect('/dogs')
+//         console.log(dog)
 //     })
 // }
 
@@ -79,6 +76,22 @@ function createVaccsLog(req, res){
             res.redirect(`/dogs/${dog._id}`)
         })
         console.log(dog)
+    })
+}
+
+function createBehaviorTag(req, res){
+    req.body.humans = !!req.body.humans
+    req.body.kids = !!req.body.kids
+    req.body.otherDogs = !!req.body.otherDogs
+    req.body.cats = !!req.body.cats
+    req.body.houseBroken = !!req.body.houseBroken
+    Dog.findById(req.params.id, function(error, dog){
+        console.log(req.body)
+        dog.behavior.push(req.body)
+        dog.save(error => {
+            res.redirect(`/dogs/${dog._id}`)
+        })
+        console.log('is this working', dog)
     })
 }
 
