@@ -6,8 +6,9 @@ export {
     index,
     show,
     deleteDog as delete,
-    vaccineForm,
+    createVaccsLog,
     addVaccs,
+    addBehavior,
 }
 
 function newDog(req, res){
@@ -37,6 +38,18 @@ function addVaccs(req, res) {
     })
 }
 
+function addBehavior(req, res) {
+    Dog.findById(req.params.dog_id, function (err, dog) {
+        console.log(dog)
+        res.render('dogs/behavior', {
+            title: 'Behavioral Assessment Form',
+            user: req.user,
+            dog: dog,
+            err: err,
+        })
+    })
+}
+
 // function create(req, res){
 //     // console.log('1: ', req.body)
 //     for(let key in req.body){
@@ -54,7 +67,7 @@ function addVaccs(req, res) {
 //     })
 // }
 
-function vaccineForm(req, res){
+function createVaccsLog(req, res){
     req.body.parvo = !!req.body.parvo
     req.body.distemper = !!req.body.distemper
     req.body.hepatitis = !!req.body.hepatitis
