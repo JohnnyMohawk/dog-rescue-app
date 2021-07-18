@@ -15,16 +15,16 @@ export {
 function newDog(req, res){
     res.render('dogs/new', {
         title: 'Dog Intake',
-        user: req.user
+        // user: req.user
     })
 }
 
 function addVaccs(req, res) {
     Dog.findById(req.params.dog_id, function (err, dog) {
-        console.log(dog)
+        // console.log(dog)
         res.render('dogs/vaccines', {
             title: 'Vaccination Form',
-            user: req.user,
+            // user: req.user,
             dog: dog,
             err: err,
         })
@@ -33,10 +33,10 @@ function addVaccs(req, res) {
 
 function addBehavior(req, res) {
     Dog.findById(req.params.dog_id, function (err, dog) {
-        console.log(dog)
+        // console.log(dog)
         res.render('dogs/behavior', {
             title: 'Behavioral Assessment Form',
-            user: req.user,
+            // user: req.user,
             dog: dog,
             err: err,
         })
@@ -70,12 +70,12 @@ function createVaccsLog(req, res){
     req.body.hepatitis = !!req.body.hepatitis
     req.body.rabies = !!req.body.rabies
     Dog.findById(req.params.id, function(error, dog){
-        console.log(req.body)
+        // console.log(req.body)
         dog.vaccination.push(req.body)
         dog.save(error => {
             res.redirect(`/dogs/${dog._id}`)
         })
-        console.log(dog)
+        // console.log(dog)
     })
 }
 
@@ -86,12 +86,12 @@ function createBehaviorTag(req, res){
     req.body.cats = !!req.body.cats
     req.body.houseBroken = !!req.body.houseBroken
     Dog.findById(req.params.id, function(error, dog){
-        console.log(req.body)
+        // console.log(req.body)
         dog.behavior.push(req.body)
         dog.save(error => {
             res.redirect(`/dogs/${dog._id}`)
         })
-        console.log('is this working', dog)
+        // console.log('is this working', dog)
     })
 }
 
@@ -109,7 +109,7 @@ function create(req, res){
     }
     // console.log('2: ', req.body)
     const dog = new Dog(req.body)
-    console.log('FINAL', dog)
+    // console.log('FINAL', dog)
     dog.save(function(error) {
         if (error) {
             console.log(error)
@@ -121,12 +121,12 @@ function create(req, res){
 
 function index(req, res){
     Dog.find({}, function(error, dogs){
-        console.log(dogs)
+        // console.log(dogs)
         res.render('dogs/index', {
             error: error,
             dogs: dogs,
             title: 'All Dogs',
-            user: req.user
+            // user: req.user
         })
     })
 }
@@ -136,7 +136,7 @@ function show(req, res){
         res.render('dogs/show', {
             title: 'Dog Details',
             dog: dog,
-            user: req.user,
+            // user: req.user,
             error: error,
         })
     })
