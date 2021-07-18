@@ -7,11 +7,19 @@ export {
     show,
     deleteDog as delete,
     vaccineForm,
+    addVaccs,
 }
 
 function newDog(req, res){
     res.render('dogs/new', {
         title: 'Dog Intake',
+        user: req.user
+    })
+}
+
+function addVaccs(req, res){
+    res.render('dogs/vaccines', {
+        title: 'Vaccination Form',
         user: req.user
     })
 }
@@ -94,3 +102,23 @@ function show(req, res){
         })
     })
 }
+
+// function showVaccs(req, res){
+//     Dog.findById(req.params.id, function(error, dog){
+//         res.render('dogs/vaccines', {
+//             title: 'Vaccination Form',
+//             dog: dog,
+//             user: req.user,
+//             error: error,
+//         })
+//     })
+// }
+
+// function showVaccs(req, res){
+//     Dog.findById(req.params.id)
+//         .exec((err, dog) => {
+//             res.render('dogs/vaccines', {
+//             err, dog, title: 'Vaccination Form', user: req.user,
+//         })
+//     })
+// }
