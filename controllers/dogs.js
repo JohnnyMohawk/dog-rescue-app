@@ -6,6 +6,7 @@ export {
     index,
     show,
     deleteDog as delete,
+    vaccineForm,
 }
 
 function newDog(req, res){
@@ -31,6 +32,21 @@ function newDog(req, res){
 //         res.redirect('/dogs')
 //     })
 // }
+
+function vaccineForm(req, res){
+    req.body.parvo = !!req.body.parvo
+    req.body.distemper = !!req.body.distemper
+    req.body.hepatitis = !!req.body.hepatitis
+    req.body.rabies = !!req.body.rabies
+    Dog.findById(req.params.id, function(error, dog){
+        console.log(req.body)
+        dog.vaccination.push(req.body)
+        dog.save(error => {
+            res.redirect(`/dogs/${dog._id}`)
+        })
+        console.log(dog)
+    })
+}
 
 function deleteDog(req, res){
     Dog.findByIdAndDelete(req.params.id, function(error, dog){

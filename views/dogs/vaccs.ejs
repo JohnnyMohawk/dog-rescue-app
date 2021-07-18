@@ -1,0 +1,40 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/dogs/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+    <h1>Vaccination Log Form</h1>
+    <form action='/dogs/<%= dog._id %>' method="POST" name='<%= dog._id %>'>
+        <label for="parvo">Parvo Vaccine:</label>
+        <input type="checkbox" id="parvo" name="parvo">
+        <label for="parvoRec">Vaccine Received</label>
+        <input type="date" id="parvoRec" name="parvoRec">
+        <label for="parvoDueNext">Next Dose Due</label>
+        <input type="date" id="parvoDueNext" name="parvoDueNext">
+
+        <label for="distemper">Distemper Vaccine:</label>
+        <input type="checkbox" id="distemper" name="distemper">
+        <label for="distRec">Vaccine Received</label>
+        <input type="date" id="distRec" name="distRec">
+        <label for="distDueNext">Next Dose Due</label>
+        <input type="date" id="distDueNext" name="distDueNext">
+
+        <label for="hepatitis">Hepatitis Vaccine:</label>
+        <input type="checkbox" id="hepatitis" name="hepatitis">
+        <label for="hepRec">Vaccine Received</label>
+        <input type="date" id="hepRec" name="hepRec">
+        <label for="hepDueNext">Next Dose Due</label>
+        <input type="date" id="hepDueNext" name="hepDueNext">
+
+        <label for="rabies">Rabies Vaccine:</label>
+        <input type="checkbox" id="rabies" name="rabies">
+        <label for="rabiesRec">Vaccine Received</label>
+        <input type="date" id="rabiesRec" name="rabiesRec">
+        <label for="rabiesDueNext">Next Dose Due</label>
+        <input type="date" id="rabiesDueNext" name="rabiesDueNext">
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+<%- include("../partials/footer") %>
