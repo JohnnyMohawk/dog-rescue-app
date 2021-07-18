@@ -6,9 +6,9 @@ router.get('/', dogsCtrl.index)
 
 router.get('/new', dogsCtrl.new)
 
-router.get('/vaccines', dogsCtrl.addVaccs)
+router.get('/vaccines/:dog_id', dogsCtrl.addVaccs)
 
-router.post('/:id', dogsCtrl.vaccineForm)
+// router.post('/:id', dogsCtrl.vaccineForm)
 
 router.get('/:id', dogsCtrl.show)
 

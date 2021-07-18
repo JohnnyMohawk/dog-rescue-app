@@ -17,10 +17,23 @@ function newDog(req, res){
     })
 }
 
-function addVaccs(req, res){
-    res.render('dogs/vaccines', {
-        title: 'Vaccination Form',
-        user: req.user
+// function addVaccs(req, res){
+//     console.log('is this working')
+//     res.render('dogs/vaccines', {
+//         title: 'Vaccination Form',
+//         user: req.user
+//     })
+// }
+
+function addVaccs(req, res) {
+    Dog.findById(req.params.dog_id, function (err, dog) {
+        console.log(dog)
+        res.render('dogs/vaccines', {
+            title: 'Vaccination Form',
+            user: req.user,
+            dog: dog,
+            err: err,
+        })
     })
 }
 
@@ -103,22 +116,3 @@ function show(req, res){
     })
 }
 
-// function showVaccs(req, res){
-//     Dog.findById(req.params.id, function(error, dog){
-//         res.render('dogs/vaccines', {
-//             title: 'Vaccination Form',
-//             dog: dog,
-//             user: req.user,
-//             error: error,
-//         })
-//     })
-// }
-
-// function showVaccs(req, res){
-//     Dog.findById(req.params.id)
-//         .exec((err, dog) => {
-//             res.render('dogs/vaccines', {
-//             err, dog, title: 'Vaccination Form', user: req.user,
-//         })
-//     })
-// }
