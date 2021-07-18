@@ -10,9 +10,9 @@ router.get('/vaccines/:dog_id', dogsCtrl.addVaccs)
 
 router.get('/behavior/:dog_id', dogsCtrl.addBehavior)
 
-router.post('/:id', dogsCtrl.createVaccsLog)
+router.post('/:id/vaccines', dogsCtrl.createVaccsLog)
 
-// router.post('/:id', dogsCtrl.createBehaviorTag)
+router.post('/:id/behavior', dogsCtrl.createBehaviorTag)
 
 router.get('/:id', dogsCtrl.show)
 
