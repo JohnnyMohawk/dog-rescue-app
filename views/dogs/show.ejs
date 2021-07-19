@@ -2,7 +2,44 @@
 <link rel="stylesheet" href="/stylesheets/dogs/show.css" />
 <%- include('../partials/nav') %>
 <main>
-    <h1><%= title %> </h1>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= title %> </h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= `${dog.name}` %>'s Details</h6>
+            <p class="card-text">Name: <strong><%= `${dog.name}` %></strong> </p>
+            <p class="card-text">Age: <strong><%= `${dog.age}` %></strong> </p>
+            <p class="card-text">Breed: <strong><%= `${dog.breed}` %></strong> </p>
+            <p class="card-text">Weight: <strong><%= `${dog.weight}` %></strong> </p>
+            <p class="card-text">Ideal Weight: <strong><%= `${dog.idealWeight}` %></strong> </p>
+            <p class="card-text">Coat: <strong><%= `${dog.coat}` %></strong> </p>
+            <p class="card-text">Fixed: <strong><%= `${dog.fixed}` %></strong> </p>
+            <p class="card-text">Health: <%= `${dog.health}` %> </p>
+            <% if(dog.vaccination.length) { %>
+                <% dog.vaccination.forEach(vaccs => { %> 
+                    <p class="card-text">Parvo Vaccs Rec: <strong><%= `${vaccs.parvoRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> |  Next Dose Due: <strong><%= `${vaccs.parvoDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
+                    <p class="card-text">Distemper Vaccs Rec: <strong><%= `${vaccs.distRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> | Next Dose Due: <strong><%= `${vaccs.distDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
+                    <p class="card-text">Hepatitis Vaccs Rec: <strong><%= `${vaccs.hepRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> | Next Dose Due: <strong><%= `${vaccs.hepDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
+                    <p class="card-text">Rabies Vaccs Rec: <strong><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> | Next Dose Due: <strong><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
+                    <p class="card-text"> </p>
+                <% }) %> 
+                <% } else { %>
+                <a href="/dogs/vaccines/<%= dog._id %>" class="card-link">Vaccine Form</a>
+                <% } %>
+            <% if(dog.behavior.length) { %>
+                <% dog.behavior.forEach(test => { %>
+                    <p class="card-text">Friendly with Humans: <%= `${test.humans}` %> </p>
+                    <p class="card-text">Friendly with Children: <%= `${test.kids}` %> </p>
+                    <p class="card-text">Likes Other Dogs: <%= `${test.otherDogs}` %> </p>
+                    <p class="card-text">Likes Cats: <%= `${test.cats}` %> </p>
+                    <p class="card-text">House Trained: <%= `${test.houseBroken}` %> </p>
+                    <p class="card-text">Energy Level 1 - 5: <%= `${test.energy}` %> </p>
+            <% }) %> 
+            <% } else { %>
+            <a href="/dogs/behavior/<%= dog._id %>" class="card-link">Behavior Form</a>
+            <% } %>
+        </div>
+    </div>
+    <!-- <h1><%= title %> </h1>
     <section>
         <div>Name:</div>
         <div><%= `${dog.name}` %> </div>
@@ -61,7 +98,7 @@
     <% }) %> 
     <% } else { %>
     <a href="/dogs/behavior/<%= dog._id %>">Behavior Form</a>
-    <% } %>
+    <% } %> -->
 </main>
 
 <%- include('../partials/footer') %>
