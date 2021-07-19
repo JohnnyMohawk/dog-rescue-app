@@ -1,9 +1,11 @@
-.form-group {
+.form-group,
+.btn-group-toggle {
     display: grid;
     grid-template-columns: repeat(1, minmax(auto, 25rem));
     font-size: 2rem;
 }
 
+.btn-group-toggle,
 .form-group * {
     padding: 5px;
     border-radius: 5px;
