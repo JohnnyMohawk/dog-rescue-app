@@ -4,6 +4,25 @@
 
 <main>
     <h1><%= title %></h1>
+    <div>
+        <% dogs.forEach((dog) => { %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= dog.name %>'s General Info:</h5>
+                        <p class="card-text"><%= dog.name %></p>
+                        <p class="card-text"><%= dog.age %></p>
+                        <p class="card-text"><%= dog.breed %></p>
+                        <p class="card-text"><%= dog.adoptable %></p>
+                        <a href="/dogs/<%= dog._id %>" class="card-link"><button>DETAILS</button></a>
+                        <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
+                        <button type="submit">DELETE</button>
+                        </form>
+                </div>
+            </div>
+        <% }) %> 
+
+    </div>
+    <!-- <h1><%= title %></h1>
     <table id="list">
         <thead>
             <tr>
@@ -29,7 +48,7 @@
             </tr>
             <% }) %> 
         </tbody>
-    </table>
+    </table> -->
 
 </main>
 
