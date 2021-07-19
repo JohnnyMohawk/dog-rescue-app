@@ -22,23 +22,23 @@
         <div><%= `${dog.health}` %> </div>
     </section>
     <% if(dog.vaccination.length) { %>
-        <% dog.vaccination.forEach(vac => { %> 
+        <% dog.vaccination.forEach(vaccs => { %> 
             <div>Parvo Vaccs Rec:</div>
-            <div><%= `${vac.parvoRec}` %> </div>
+            <div><%= `${vaccs.parvoRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Next Dose Due:</div>
-            <div><%= `${vac.parvoDueNext}` %> </div>
+            <div><%= `${vaccs.parvoDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Distemper Vaccs Rec:</div>
-            <div><%= `${vac.distRec}` %> </div>
+            <div><%= `${vaccs.distRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Next Dose Due:</div>
-            <div><%= `${vac.distDueNext}` %> </div>
+            <div><%= `${vaccs.distDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Hepatitis Vaccs Rec:</div>
-            <div><%= `${vac.hepRec}` %> </div>
+            <div><%= `${vaccs.hepRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Next Dose Due:</div>
-            <div><%= `${vac.hepDueNext}` %> </div>
+            <div><%= `${vaccs.hepDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Rabies Vaccs Rec:</div>
-            <div><%= `${vac.rabiesRec}` %> </div>
+            <div><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
             <div>Next Dose Due:</div>
-            <div><%= `${vac.rabiesDueNext}` %> </div>
+            <div><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
         <% }) %> 
         <% } else { %>
         <a href="/dogs/vaccines/<%= dog._id %>">Vaccine Form</a>
