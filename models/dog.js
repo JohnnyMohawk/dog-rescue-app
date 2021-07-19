@@ -7,27 +7,33 @@ export {
 const Schema = mongoose.Schema
 
 const behaviorSchema = new Schema({
-    humans: {type: Boolean, required: true},
-    kids: {type: Boolean, required: true},
-    otherDogs: {type: Boolean, required: true},
-    cats: {type: Boolean, required: true},
-    houseBroken: {type: Boolean, required: true},
+    humans: Boolean,
+    kids: Boolean,
+    otherDogs: Boolean,
+    cats: Boolean,
+    houseBroken: Boolean,
     energy: {type: Number, min: 1, max: 5},
+    behaviorNotes: String,
+}, {
+    timestamps: true,
 })
 
 const vaccineSchema = new Schema({
-    parvo: {type: Boolean, required: true},
+    parvo: Boolean,
     parvoRec: {type: Date, required: true},
     parvoDueNext: {type: Date, required: true},
-    distemper: {type: Boolean, required: true},
+    distemper: Boolean,
     distRec: {type: Date, required: true},
     distDueNext: {type: Date, required: true},
-    hepatitis: {type: Boolean, required: true},
+    hepatitis: Boolean,
     hepRec: {type: Date, required: true},
     hepDueNext: {type: Date, required: true},
-    rabies: {type: Boolean, required: true},
+    rabies: Boolean,
     rabiesRec: {type: Date, required: true},
     rabiesDueNext: {type: Date, required: true},
+    healthNotes: String,
+}, {
+    timestamps: true,
 })
 
 const dogSchema = new Schema ({
@@ -38,7 +44,7 @@ const dogSchema = new Schema ({
     idealWeight: {type: Number, required: true},
     coat: {type: String, required: true},
     fixed: {type: String, required: true},
-    health: String,
+    generalNotes: String,
     behavior: {type: [behaviorSchema]},
     vaccination: {type: [vaccineSchema]},
     adoptable: {type: Boolean, default: false},
