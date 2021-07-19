@@ -5,35 +5,55 @@
 <main>
     <h1><%= title %></h1>
     <form action='/dogs/<%= dog._id %>/vaccines' method="POST">
-        <label for="parvo">Parvo Vaccine:</label>
-        <input type="checkbox" id="parvo" name="parvo">
-        <label for="parvoRec">Vaccine Received</label>
-        <input type="date" id="parvoRec" name="parvoRec">
-        <label for="parvoDueNext">Next Dose Due</label>
-        <input type="date" id="parvoDueNext" name="parvoDueNext">
-
-        <label for="distemper">Distemper Vaccine:</label>
-        <input type="checkbox" id="distemper" name="distemper">
-        <label for="distRec">Vaccine Received</label>
-        <input type="date" id="distRec" name="distRec">
-        <label for="distDueNext">Next Dose Due</label>
-        <input type="date" id="distDueNext" name="distDueNext">
-
-        <label for="hepatitis">Hepatitis Vaccine:</label>
-        <input type="checkbox" id="hepatitis" name="hepatitis">
-        <label for="hepRec">Vaccine Received</label>
-        <input type="date" id="hepRec" name="hepRec">
-        <label for="hepDueNext">Next Dose Due</label>
-        <input type="date" id="hepDueNext" name="hepDueNext">
-
-        <label for="rabies">Rabies Vaccine:</label>
-        <input type="checkbox" id="rabies" name="rabies">
-        <label for="rabiesRec">Vaccine Received</label>
-        <input type="date" id="rabiesRec" name="rabiesRec">
-        <label for="rabiesDueNext">Next Dose Due</label>
-        <input type="date" id="rabiesDueNext" name="rabiesDueNext">
-
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <label for="parvo">Parvo Vaccine:</label>
+            <input type="checkbox" class="form-control" id="parvo" name="parvo">
+        </div>
+        <div class="form-group">
+            <label for="parvoRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="parvoRec" name="parvoRec">
+        </div>
+        <div class="form-group">
+            <label for="parvoDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="parvoDueNext" name="parvoDueNext">
+        </div>
+        <div class="form-group">
+            <label for="distemper">Distemper Vaccine:</label>
+            <input type="checkbox" class="form-control" id="distemper" name="distemper">
+        </div>
+        <div class="form-group">
+            <label for="distRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="distRec" name="distRec">
+        </div>
+        <div class="form-group">
+            <label for="distDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="distDueNext" name="distDueNext">
+        </div>
+        <div class="form-group">
+            <label for="hepatitis">Hepatitis Vaccine:</label>
+            <input type="checkbox" class="form-control" id="hepatitis" name="hepatitis">
+        </div>
+        <div class="form-group">
+            <label for="hepRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="hepRec" name="hepRec">
+        </div>
+        <div class="form-group">
+            <label for="hepDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="hepDueNext" name="hepDueNext">
+        </div>
+        <div class="form-group">
+            <label for="rabies">Rabies Vaccine:</label>
+            <input type="checkbox" class="form-control" id="rabies" name="rabies">
+        </div>
+        <div class="form-group">
+            <label for="rabiesRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="rabiesRec" name="rabiesRec">
+        </div>
+        <div class="form-group">
+            <label for="rabiesDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="rabiesDueNext" name="rabiesDueNext">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </main>
 
