@@ -5,9 +5,12 @@
 <main>
     <h1><%= title %></h1>
     <form action='/dogs/<%= dog._id %>/vaccines' method="POST">
-        <div class="form-group">
-            <label for="parvo">Parvo Vaccine:</label>
-            <input type="checkbox" class="form-control" id="parvo" name="parvo">
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
+                <label class="btn btn-secondary active">
+                    <input type="checkbox" id="parvo" name="parvo">    Parvo Vaccine:
+                </label>
+            </div>
         </div>
         <div class="form-group">
             <label for="parvoRec">Vaccine Received</label>
@@ -17,9 +20,12 @@
             <label for="parvoDueNext">Next Dose Due</label>
             <input type="date" class="form-control" id="parvoDueNext" name="parvoDueNext">
         </div>
-        <div class="form-group">
-            <label for="distemper">Distemper Vaccine:</label>
-            <input type="checkbox" class="form-control" id="distemper" name="distemper">
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
+                <label class="btn btn-secondary active">
+                    <input type="checkbox" id="distemper" name="distemper">    Distemper Vaccine:
+                </label>
+            </div>
         </div>
         <div class="form-group">
             <label for="distRec">Vaccine Received</label>
@@ -29,9 +35,12 @@
             <label for="distDueNext">Next Dose Due</label>
             <input type="date" class="form-control" id="distDueNext" name="distDueNext">
         </div>
-        <div class="form-group">
-            <label for="hepatitis">Hepatitis Vaccine:</label>
-            <input type="checkbox" class="form-control" id="hepatitis" name="hepatitis">
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
+                <label class="btn btn-secondary active">
+                    <input type="checkbox" id="hepatitis" name="hepatitis">    Hepatitis Vaccine:
+                </label>
+            </div>
         </div>
         <div class="form-group">
             <label for="hepRec">Vaccine Received</label>
@@ -41,9 +50,12 @@
             <label for="hepDueNext">Next Dose Due</label>
             <input type="date" class="form-control" id="hepDueNext" name="hepDueNext">
         </div>
-        <div class="form-group">
-            <label for="rabies">Rabies Vaccine:</label>
-            <input type="checkbox" class="form-control" id="rabies" name="rabies">
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
+                <label class="btn btn-secondary active">
+                    <input type="checkbox" id="rabies" name="rabies">    Rabies Vaccine:
+                </label>
+            </div>
         </div>
         <div class="form-group">
             <label for="rabiesRec">Vaccine Received</label>
