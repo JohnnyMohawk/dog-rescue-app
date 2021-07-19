@@ -79,6 +79,23 @@ function createVaccsLog(req, res){
     })
 }
 
+// function createBehaviorTag(req, res){
+//     req.body.humans = !!req.body.humans
+//     req.body.kids = !!req.body.kids
+//     req.body.otherDogs = !!req.body.otherDogs
+//     req.body.cats = !!req.body.cats
+//     req.body.houseBroken = !!req.body.houseBroken
+//     Dog.findById(req.params.id, function(error, dog){
+//         // console.log(req.body)
+//         dog.behavior.push(req.body)
+//         Dog.create(req.body)
+//         .then(dog => {
+//             res.redirect('/dogs')
+//         })
+//         // console.log('is this working', dog)
+//     })
+// }
+
 function createBehaviorTag(req, res){
     req.body.humans = !!req.body.humans
     req.body.kids = !!req.body.kids
@@ -89,7 +106,10 @@ function createBehaviorTag(req, res){
         // console.log(req.body)
         dog.behavior.push(req.body)
         dog.save(error => {
+            console.log('req.body', req.body)
+            console.log('dog', dog)
             res.redirect(`/dogs/${dog._id}`)
+            // res.redirect(`/dogs/${dog._id}`)
         })
         // console.log('is this working', dog)
     })

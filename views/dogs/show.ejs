@@ -20,37 +20,48 @@
         <div><%= `${dog.fixed}` %> </div>
         <div>Health:</div>
         <div><%= `${dog.health}` %> </div>
-        <div>Parvo Vaccs Rec:</div>
-        <div><%= `${dog.vaccination.parvoRec}` %> </div>
-        <div>Next Dose Due:</div>
-        <div><%= `${dog.vaccination.parvoDueNext}` %> </div>
-        <div>Distemper Vaccs Rec:</div>
-        <div><%= `${dog.vaccination.distRec}` %> </div>
-        <div>Next Dose Due:</div>
-        <div><%= `${dog.vaccination.distDueNext}` %> </div>
-        <div>Hepatitis Vaccs Rec:</div>
-        <div><%= `${dog.vaccination.hepRec}` %> </div>
-        <div>Next Dose Due:</div>
-        <div><%= `${dog.vaccination.hepDueNext}` %> </div>
-        <div>Rabies Vaccs Rec:</div>
-        <div><%= `${dog.vaccination.rabiesRec}` %> </div>
-        <div>Next Dose Due:</div>
-        <div><%= `${dog.vaccination.rabiesDueNext}` %> </div>
-        <div>Friendly with Humans:</div>
-        <div><%= `${dog.behavior.humans}` %> </div>
-        <div>Friendly with Children:</div>
-        <div><%= `${dog.behavior.kids}` %> </div>
-        <div>Likes Other Dogs:</div>
-        <div><%= `${dog.behavior.otherDogs}` %> </div>
-        <div>Likes Cats:</div>
-        <div><%= `${dog.behavior.cats}` %> </div>
-        <div>House Trained:</div>
-        <div><%= `${dog.behavior.houseBroken}` %> </div>
-        <div>Energy Level 1 - 5:</div>
-        <div><%= `${dog.behavior.energy}` %> </div>
-        <a href="/dogs/vaccines/<%= dog._id %>">Vaccine Form</a>
-        <a href="/dogs/behavior/<%= dog._id %>">Behavior Form</a>
     </section>
+    <% if(dog.vaccination.length) { %>
+        <% dog.vaccination.forEach(vac => { %> 
+            <div>Parvo Vaccs Rec:</div>
+            <div><%= `${vac.parvoRec}` %> </div>
+            <div>Next Dose Due:</div>
+            <div><%= `${vac.parvoDueNext}` %> </div>
+            <div>Distemper Vaccs Rec:</div>
+            <div><%= `${vac.distRec}` %> </div>
+            <div>Next Dose Due:</div>
+            <div><%= `${vac.distDueNext}` %> </div>
+            <div>Hepatitis Vaccs Rec:</div>
+            <div><%= `${vac.hepRec}` %> </div>
+            <div>Next Dose Due:</div>
+            <div><%= `${vac.hepDueNext}` %> </div>
+            <div>Rabies Vaccs Rec:</div>
+            <div><%= `${vac.rabiesRec}` %> </div>
+            <div>Next Dose Due:</div>
+            <div><%= `${vac.rabiesDueNext}` %> </div>
+        <% }) %> 
+        <% } else { %>
+        <a href="/dogs/vaccines/<%= dog._id %>">Vaccine Form</a>
+        <% } %>
+    <% if(dog.behavior.length) { %>
+        <% dog.behavior.forEach(test => { %>
+            <div>Friendly with Humans:</div>
+            <div><%= `${test.humans}` %> </div>
+            <div>Friendly with Children:</div>
+            <div><%= `${test.kids}` %> </div>
+            <div>Likes Other Dogs:</div>
+            <div><%= `${test.otherDogs}` %> </div>
+            <div>Likes Cats:</div>
+            <div><%= `${test.cats}` %> </div>
+            <div>House Trained:</div>
+            <div><%= `${test.houseBroken}` %> </div>
+            <div>Energy Level 1 - 5:</div>
+            <div><%= `${test.energy}` %> </div>
+    <!-- <a href="/dogs/vaccines/<%= dog._id %>">Vaccine Form</a> -->
+    <% }) %> 
+    <% } else { %>
+    <a href="/dogs/behavior/<%= dog._id %>">Behavior Form</a>
+    <% } %>
 </main>
 
 <%- include('../partials/footer') %>
