@@ -41,6 +41,8 @@ const foreverHomeSchema = new Schema({
     address: {type: String, required: true},
     phone: Number,
     email: {type: String, required: true},
+}, {
+    timestamps: true,
 })
 
 const transferRescueSchema = new Schema({
@@ -48,6 +50,8 @@ const transferRescueSchema = new Schema({
     address: {type: String, required: true},
     phone: {type: Number, required: true},
     email: {type: String, required: true},
+}, {
+    timestamps: true,
 })
 
 const dogSchema = new Schema ({
