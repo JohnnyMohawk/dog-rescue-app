@@ -36,6 +36,14 @@ const vaccineSchema = new Schema({
     timestamps: true,
 })
 
+const foreverHomeSchema = new Schema({
+
+})
+
+const transferRescueSchema = new Schema({
+
+})
+
 const dogSchema = new Schema ({
     intakeRep: {type: mongoose.Schema.Types.ObjectId, ref: "Profile", required: true},
     name: {type: String, required: true},
@@ -50,7 +58,9 @@ const dogSchema = new Schema ({
     vaccination: {type: [vaccineSchema]},
     adoptable: {type: Boolean, default: false},
     adopted: {type: Boolean, default: false},
+    foreverHome: {type: [foreverHomeSchema]},
     transferred: {type: Boolean, default: false},
+    transferRescue: {type: [transferRescueSchema]},
 }, {
     timestamps: true,
 })
