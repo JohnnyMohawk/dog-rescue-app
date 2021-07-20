@@ -4,101 +4,72 @@
 <main>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title"><%= title %> </h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= `${dog.name}` %>'s Details</h6>
-            <p class="card-text">Name: <strong><%= `${dog.name}` %></strong> </p>
-            <p class="card-text">Age: <strong><%= `${dog.age}` %></strong> </p>
-            <p class="card-text">Breed: <strong><%= `${dog.breed}` %></strong> </p>
-            <p class="card-text">Weight: <strong><%= `${dog.weight}` %></strong> </p>
-            <p class="card-text">Ideal Weight: <strong><%= `${dog.idealWeight}` %></strong> </p>
-            <p class="card-text">Coat: <strong><%= `${dog.coat}` %></strong> </p>
-            <p class="card-text">Fixed: <strong><%= `${dog.fixed}` %></strong> </p>
-            <p class="card-text">Health: <%= `${dog.health}` %> </p>
+            <h5 class="card-title"><%= `${dog.name}` %>'s Details</h5>
+            <p class="card-text">
+                Name: <strong><%= `${dog.name}` %></strong><br>
+                Age: <strong><%= `${dog.age}` %></strong><br>
+                Breed: <strong><%= `${dog.breed}` %></strong><br>
+                Weight: <strong><%= `${dog.weight}` %></strong><br>
+                Ideal Weight: <strong><%= `${dog.idealWeight}` %></strong><br>
+                Coat: <strong><%= `${dog.coat}` %></strong><br>
+                Fixed: <strong><%= `${dog.fixed}` %></strong></p>
+            <p class="card-text">
+                Intake Notes: <%= `${dog.generalNotes}` %> </p>
             <% if(dog.vaccination.length) { %>
                 <% dog.vaccination.forEach(vaccs => { %> 
-                    <p class="card-text">Parvo Vaccs Rec: <strong><%= `${vaccs.parvoRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> |  Next Dose Due: <strong><%= `${vaccs.parvoDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
-                    <p class="card-text">Distemper Vaccs Rec: <strong><%= `${vaccs.distRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> | Next Dose Due: <strong><%= `${vaccs.distDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
-                    <p class="card-text">Hepatitis Vaccs Rec: <strong><%= `${vaccs.hepRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> | Next Dose Due: <strong><%= `${vaccs.hepDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
-                    <p class="card-text">Rabies Vaccs Rec: <strong><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong> | Next Dose Due: <strong><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %></strong></p>
-                    <p class="card-text"> </p>
+                    <p class="card-text">
+                        Parvo Rec: <strong><%= `${vaccs.parvoRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Next Dose Due: <strong><%= `${vaccs.parvoDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Distemper Rec: <strong><%= `${vaccs.distRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Next Dose Due: <strong><%= `${vaccs.distDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Hepatitis Rec: <strong><%= `${vaccs.hepRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Next Dose Due: <strong><%= `${vaccs.hepDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Rabies Rec: <strong><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
+                        Next Dose Due: <strong><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong>
+                    </p>
                 <% }) %> 
                 <% } else { %>
                 <a href="/dogs/vaccines/<%= dog._id %>" class="card-link">Vaccine Form</a>
                 <% } %>
             <% if(dog.behavior.length) { %>
                 <% dog.behavior.forEach(test => { %>
-                    <p class="card-text">Friendly with Humans: <%= `${test.humans}` %> </p>
-                    <p class="card-text">Friendly with Children: <%= `${test.kids}` %> </p>
-                    <p class="card-text">Likes Other Dogs: <%= `${test.otherDogs}` %> </p>
-                    <p class="card-text">Likes Cats: <%= `${test.cats}` %> </p>
-                    <p class="card-text">House Trained: <%= `${test.houseBroken}` %> </p>
-                    <p class="card-text">Energy Level 1 - 5: <%= `${test.energy}` %> </p>
+                    <p class="card-text">
+                    <% if(test.humans === true){ %>
+                        <%= dog.name %> is <strong>FRIENDLY</strong> with humans!
+                    <% }else{ %>
+                        <%= dog.name %> is shy with people.<br>
+                    <% } %>
+                    <% if(test.kids === true){ %>
+                        <%= dog.name %> is <strong>GOOD</strong> with children!
+                    <% }else{ %>
+                        <%= dog.name %> is afraid of kids.<br>
+                    <% } %>
+                    <% if(test.otherDogs === true){ %>
+                        <%= dog.name %> <strong>LIKES</strong> other dogs!<br>
+                    <% }else{ %>
+                        <%= dog.name %> doesn't like other dogs.<br>
+                    <% } %>
+                    <% if(test.cats === true){ %>
+                        <%= dog.name %> <strong>LIKES</strong> cats!<br>
+                    <% }else{ %>
+                        <%= dog.name %> doesn't like cats.<br>
+                    <% } %>
+                    <% if(test.houseBroken === true){ %>
+                        <%= dog.name %> is <strong>HOUSE TRAINED</strong>!
+                    <% }else{ %>
+                        <%= dog.name %> needs training.<br>
+                    <% } %>
+                    <%= dog.name %>'s energy is a <strong><%= test.energy %></strong> / 5. 
+                    </p>
             <% }) %> 
             <% } else { %>
             <a href="/dogs/behavior/<%= dog._id %>" class="card-link">Behavior Form</a>
             <% } %>
+            <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
         </div>
     </div>
-    <!-- <h1><%= title %> </h1>
-    <section>
-        <div>Name:</div>
-        <div><%= `${dog.name}` %> </div>
-        <div>Age:</div>
-        <div><%= `${dog.age}` %> </div>
-        <div>Breed:</div>
-        <div><%= `${dog.breed}` %> </div>
-        <div>Weight:</div>
-        <div><%= `${dog.weight}` %> </div>
-        <div>Ideal Weight:</div>
-        <div><%= `${dog.idealWeight}` %> </div>
-        <div>Coat:</div>
-        <div><%= `${dog.coat}` %> </div>
-        <div>Fixed:</div>
-        <div><%= `${dog.fixed}` %> </div>
-        <div>Health:</div>
-        <div><%= `${dog.health}` %> </div>
-    </section>
-    <% if(dog.vaccination.length) { %>
-        <% dog.vaccination.forEach(vaccs => { %> 
-            <div>Parvo Vaccs Rec:</div>
-            <div><%= `${vaccs.parvoRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Next Dose Due:</div>
-            <div><%= `${vaccs.parvoDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Distemper Vaccs Rec:</div>
-            <div><%= `${vaccs.distRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Next Dose Due:</div>
-            <div><%= `${vaccs.distDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Hepatitis Vaccs Rec:</div>
-            <div><%= `${vaccs.hepRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Next Dose Due:</div>
-            <div><%= `${vaccs.hepDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Rabies Vaccs Rec:</div>
-            <div><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-            <div>Next Dose Due:</div>
-            <div><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(0, 4).join(' ')}` %> </div>
-        <% }) %> 
-        <% } else { %>
-        <a href="/dogs/vaccines/<%= dog._id %>">Vaccine Form</a>
-        <% } %>
-    <% if(dog.behavior.length) { %>
-        <% dog.behavior.forEach(test => { %>
-            <div>Friendly with Humans:</div>
-            <div><%= `${test.humans}` %> </div>
-            <div>Friendly with Children:</div>
-            <div><%= `${test.kids}` %> </div>
-            <div>Likes Other Dogs:</div>
-            <div><%= `${test.otherDogs}` %> </div>
-            <div>Likes Cats:</div>
-            <div><%= `${test.cats}` %> </div>
-            <div>House Trained:</div>
-            <div><%= `${test.houseBroken}` %> </div>
-            <div>Energy Level 1 - 5:</div>
-            <div><%= `${test.energy}` %> </div>
-    <!-- <a href="/dogs/vaccines/<%= dog._id %>">Vaccine Form</a> -->
-    <% }) %> 
-    <% } else { %>
-    <a href="/dogs/behavior/<%= dog._id %>">Behavior Form</a>
-    <% } %> -->
 </main>
 
 <%- include('../partials/footer') %>

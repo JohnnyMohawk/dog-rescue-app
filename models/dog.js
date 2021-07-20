@@ -49,6 +49,8 @@ const dogSchema = new Schema ({
     behavior: {type: [behaviorSchema]},
     vaccination: {type: [vaccineSchema]},
     adoptable: {type: Boolean, default: false},
+    adopted: {type: Boolean, default: false},
+    transferred: {type: Boolean, default: false},
 }, {
     timestamps: true,
 })

@@ -14,16 +14,15 @@
                             Breed: <strong><%= dog.breed %></strong><br>
                             Weight: <strong><%= dog.weight %></strong><br>
                             <% if(dog.adoptable === true){ %>
-                                <%= dog.name %> is ready for adoption!
+                                <strong><%= dog.name %> is ready for adoption!</strong>
                             <% }else{ %>
-                                <%= dog.name %> is not ready for adoption.
+                                <strong><%= dog.name %> is not ready for adoption.</strong>
                             <% } %> 
                         </p>
-                        <p class="card-text"><%= dog.adoptable %></p>
-                        <a href="/dogs/<%= dog._id %>" class="card-link"><button>DETAILS</button></a>
-                        <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
+                        <a href="/dogs/<%= dog._id %>" class="card-link"><button class="btn btn-primary mb-2">DETAILS</button></a>
+                        <!-- <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
                         <button type="submit">DELETE</button>
-                        </form>
+                        </form> -->
                 </div>
             </div>
         <% }) %> 
