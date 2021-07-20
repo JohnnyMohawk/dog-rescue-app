@@ -9,9 +9,16 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title"><%= dog.name %>'s General Info:</h5>
-                        <p class="card-text"><%= dog.name %></p>
-                        <p class="card-text"><%= dog.age %></p>
-                        <p class="card-text"><%= dog.breed %></p>
+                        <p class="card-text">
+                            Age: <strong><%= dog.age %></strong><br>
+                            Breed: <strong><%= dog.breed %></strong><br>
+                            Weight: <strong><%= dog.weight %></strong><br>
+                            <% if(dog.adoptable === true){ %>
+                                <%= dog.name %> is ready for adoption!
+                            <% }else{ %>
+                                <%= dog.name %> is not ready for adoption.
+                            <% } %> 
+                        </p>
                         <p class="card-text"><%= dog.adoptable %></p>
                         <a href="/dogs/<%= dog._id %>" class="card-link"><button>DETAILS</button></a>
                         <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">

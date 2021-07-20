@@ -1,20 +1,19 @@
-.form-group,
-.btn-group-toggle {
+.btn-group-toggle,
+.form-group {
     display: grid;
     grid-template-columns: repeat(1, minmax(auto, 25rem));
     font-size: 2rem;
 }
 
-.btn-group-toggle,
 .form-group * {
     padding: 5px;
     border-radius: 5px;
     font-size: 2rem;
 }
 
-/* form > button {
-    grid-column: span 2;
-    width: 16rem;
-    margin-left: auto;
-    font-size: 2.2rem;
-} */
+#newDogSubmit {
+    width: 25rem;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 2rem;
+}

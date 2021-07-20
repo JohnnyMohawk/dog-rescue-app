@@ -102,6 +102,7 @@ function deleteDog(req, res){
 }
 
 function create(req, res){
+    req.body.intakeRep = req.user.profile
     req.body.adoptable = !!req.body.adoptable
     // console.log('1: ', req.body)
     for(let key in req.body){

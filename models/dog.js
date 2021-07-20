@@ -37,6 +37,7 @@ const vaccineSchema = new Schema({
 })
 
 const dogSchema = new Schema ({
+    intakeRep: {type: mongoose.Schema.Types.ObjectId, ref: "Profile", required: true},
     name: {type: String, required: true},
     age: {type: Number, required: true},
     breed: {type: String, required: true},
