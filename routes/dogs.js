@@ -16,6 +16,10 @@ router.get('/vaccines/:dog_id', isLoggedIn, dogsCtrl.addVaccs)
 
 router.get('/behavior/:dog_id', isLoggedIn, dogsCtrl.addBehavior)
 
+router.get('/adoption/:dog_id', isLoggedIn, dogsCtrl.procAdoption)
+
+router.get('/transfer/:dog_id', isLoggedIn, dogsCtrl.procTransfer)
+
 router.post('/:id/vaccines', isLoggedIn, dogsCtrl.createVaccsLog)
 
 router.post('/:id/behavior', isLoggedIn, dogsCtrl.createBehaviorTag)

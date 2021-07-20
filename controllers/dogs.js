@@ -10,6 +10,22 @@ export {
     createBehaviorTag,
     addVaccs,
     addBehavior,
+    procAdoption,
+    procTransfer,
+}
+
+function procTransfer(req, res){
+    res.render('dogs/transfer', {
+        title: 'Transfer Form',
+        // user: req.user
+    })
+}
+
+function procAdoption(req, res){
+    res.render('dogs/adoption', {
+        title: 'Adoption Form',
+        // user: req.user
+    })
 }
 
 function newDog(req, res){
@@ -35,7 +51,7 @@ function addBehavior(req, res) {
     Dog.findById(req.params.dog_id, function (err, dog) {
         // console.log(dog)
         res.render('dogs/behavior', {
-            title: 'Behavioral Assessment Form',
+            title: 'Behavioral Form',
             // user: req.user,
             dog: dog,
             err: err,

@@ -65,8 +65,10 @@
             <% } else { %>
             <a href="/dogs/behavior/<%= dog._id %>" class="card-link">Behavior Form</a>
             <% } %>
+            <a href="/dogs/adoption/<%= dog._id %>" class="card-link"><button type="submit">PROCESS ADOPTION</button></a>
+            <a href="/dogs/transfer/<%= dog._id %>" class="card-link"><button type="submit">PROCESS TRANSFER</button></a>
             <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit" class="btn btn-danger">DELETE</button>
+                <button type="submit" class="btn btn-danger">REMOVE FROM DB</button>
             </form>
         </div>
     </div>
