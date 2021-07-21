@@ -13,10 +13,24 @@ export {
     procAdoption,
     procTransfer,
     createAdoptionTag,
+    createTransferTag,
+}
+
+function createTransferTag(req, res){
+    Dog.findById(req.params.id, function(error, dog){
+        dog.transferRescue.push(req.body)
+        dog.save(error => {
+            console.log(error)
+            res.redirect(`/dogs/${dog._id}`)
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/dogs")
+    })
 }
 
 function createAdoptionTag(req, res){
-    console.log('working?')
     Dog.findById(req.params.id, function(error, dog){
         dog.foreverHome.push(req.body)
         dog.save(error => {
@@ -31,14 +45,17 @@ function createAdoptionTag(req, res){
 }
 
 function procTransfer(req, res){
-    res.render('dogs/transfer', {
-        title: 'Transfer Form',
+    Dog.findById(req.params.dog_id, function (err, dog) {
+        res.render('dogs/transfer', {
+            title: 'Transfer Form',
+            dog: dog,
+            err: err,
+        })
     })
 }
 
 function procAdoption(req, res){
     Dog.findById(req.params.dog_id, function (err, dog) {
-        // console.log(dog)
         res.render('dogs/adoption', {
             title: 'Adoption Form',
             dog: dog,

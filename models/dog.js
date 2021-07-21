@@ -47,9 +47,9 @@ const foreverHomeSchema = new Schema({
 
 const transferRescueSchema = new Schema({
     specialRescue: {type: String, required: true},
-    address: {type: String, required: true},
-    phone: {type: String, required: true},
-    email: {type: String, required: true},
+    rescueAddress: {type: String, required: true},
+    rescuePhone: {type: String, required: true},
+    rescueEmail: {type: String, required: true},
 }, {
     timestamps: true,
 })

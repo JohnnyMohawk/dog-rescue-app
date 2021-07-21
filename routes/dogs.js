@@ -26,6 +26,8 @@ router.post('/:id/behavior', isLoggedIn, dogsCtrl.createBehaviorTag)
 
 router.post('/:id/adoption', isLoggedIn, dogsCtrl.createAdoptionTag)
 
+router.post('/:id/transfer', isLoggedIn, dogsCtrl.createTransferTag)
+
 router.get('/:id', dogsCtrl.show)
 
 router.post('/', isLoggedIn, dogsCtrl.create)

@@ -2,6 +2,28 @@
 <link rel="stylesheet" href="/stylesheets/dogs/new.css" />
 <%- include('../partials/nav') %>
 
+<main>
+    <h1><%= title %></h1>
+    <form action='/dogs/<%= dog._id %>/transfer' method="POST">
+        <div class="form-group">
+            <label for="specialRescue">Rescue Name:</label>
+            <input type="text" name="specialRescue" id="specialRescue" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="rescueAddress">Adoptor's Address:</label>
+            <input type="text" name="rescueAddress" id="rescueAddress" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="rescuePhone">Adoptor's Phone:</label>
+            <input type="tel" name="rescuePhone" id="rescuePhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="rescueEmail">Adoptor's Email:</label>
+            <input type="email" name="rescueEmail" id="rescueEmail" required autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</main>
 
 
 <%- include("../partials/footer") %>
