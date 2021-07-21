@@ -38,9 +38,9 @@ const vaccineSchema = new Schema({
 
 const foreverHomeSchema = new Schema({
     adoptorName: {type: String, required: true},
-    address: {type: String, required: true},
-    phone: Number,
-    email: {type: String, required: true},
+    adoptAddress: {type: String, required: true},
+    adoptPhone: Number,
+    adoptEmail: {type: String, required: true},
 }, {
     timestamps: true,
 })
