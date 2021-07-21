@@ -39,7 +39,7 @@ const vaccineSchema = new Schema({
 const foreverHomeSchema = new Schema({
     adoptorName: {type: String, required: true},
     adoptAddress: {type: String, required: true},
-    adoptPhone: Number,
+    adoptPhone: String,
     adoptEmail: {type: String, required: true},
 }, {
     timestamps: true,
@@ -48,7 +48,7 @@ const foreverHomeSchema = new Schema({
 const transferRescueSchema = new Schema({
     specialRescue: {type: String, required: true},
     address: {type: String, required: true},
-    phone: {type: Number, required: true},
+    phone: {type: String, required: true},
     email: {type: String, required: true},
 }, {
     timestamps: true,

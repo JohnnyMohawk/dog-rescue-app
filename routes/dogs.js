@@ -24,6 +24,8 @@ router.post('/:id/vaccines', isLoggedIn, dogsCtrl.createVaccsLog)
 
 router.post('/:id/behavior', isLoggedIn, dogsCtrl.createBehaviorTag)
 
+router.post('/:id/adoption', isLoggedIn, dogsCtrl.createAdoptionTag)
+
 router.get('/:id', dogsCtrl.show)
 
 router.post('/', isLoggedIn, dogsCtrl.create)
