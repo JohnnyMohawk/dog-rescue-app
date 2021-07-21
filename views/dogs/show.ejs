@@ -27,9 +27,10 @@
                         Rabies Rec: <strong><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
                         Next Dose Due: <strong><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong>
                     </p>
+                    <a href="/dogs/vaccines/<%= dog._id %>/update" class="card-link">UPDATE VACCINE FORM</a>
                 <% }) %> 
                 <% } else { %>
-                <a href="/dogs/vaccines/<%= dog._id %>" class="card-link">Vaccine Form</a>
+                <a href="/dogs/vaccines/<%= dog._id %>" class="card-link"><button type="submit">COMPLETE VACCINE FORM</button></a>
                 <% } %>
             <% if(dog.behavior.length) { %>
                 <% dog.behavior.forEach(test => { %>
@@ -61,9 +62,10 @@
                     <% } %>
                     <%= dog.name %>'s energy is a <strong><%= test.energy %></strong> / 5. 
                     </p>
+                    <a href="/dogs/behavior/<%= dog._id %>/update" class="card-link"><button type="submit">UPDATE BEHAVIOR FORM</button></a>
             <% }) %> 
             <% } else { %>
-            <a href="/dogs/behavior/<%= dog._id %>" class="card-link">Behavior Form</a>
+            <a href="/dogs/behavior/<%= dog._id %>" class="card-link"><button type="submit">COMPLETE BEHAVIOR FORM</button></a>
             <% } %>
             <a href="/dogs/adoption/<%= dog._id %>" class="card-link"><button type="submit">PROCESS ADOPTION</button></a>
             <a href="/dogs/transfer/<%= dog._id %>" class="card-link"><button type="submit">PROCESS TRANSFER</button></a>

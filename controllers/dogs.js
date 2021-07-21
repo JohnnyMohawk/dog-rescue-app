@@ -14,10 +14,67 @@ export {
     procTransfer,
     createAdoptionTag,
     createTransferTag,
+    addUpdateVaccs,
+    addUpdateBehavior,
+    updateVaccs,
+    updateBehavior,
+}
+
+function addUpdateVaccs(req, res){
+    console.log('working?')
+    Dog.findById(req.params.dog_id, function (err, dog) {
+        res.render('dogs/vaccines', {
+            title: 'Vaccination Form',
+            dog: dog,
+            err: err,
+        })
+    })
+}
+
+function addUpdateBehavior(req, res){
+    console.log('working')
+    Dog.findById(req.params.dog_id, function (err, dog) {
+        res.render('dogs/behavior', {
+            title: 'Behavioral Form',
+            dog: dog,
+            err: err,
+        })
+    })
+}
+
+function updateBehavior(req, res){
+    console.log('working')
+    req.body.humans = !!req.body.humans
+    req.body.kids = !!req.body.kids
+    req.body.otherDogs = !!req.body.otherDogs
+    req.body.cats = !!req.body.cats
+    req.body.houseBroken = !!req.body.houseBroken
+    Dog.findById(req.params.id, function(error, dog){
+        dog.behavior.push(req.body)
+        dog.update(error => {
+            res.redirect(`/dogs/${dog._id}`)
+        })
+    })
+}
+
+function updateVaccs(req, res){
+    console.log('working')
+    req.body.parvo = !!req.body.parvo
+    req.body.distemper = !!req.body.distemper
+    req.body.hepatitis = !!req.body.hepatitis
+    req.body.rabies = !!req.body.rabies
+    Dog.findById(req.params.id, function(error, dog){
+        dog.vaccination.push(req.body)
+        dog.update(error => {
+            res.redirect(`/dogs/${dog._id}`)
+        })
+    })
 }
 
 function createTransferTag(req, res){
     Dog.findById(req.params.id, function(error, dog){
+        dog.adoptable = false
+        dog.transferred = true
         dog.transferRescue.push(req.body)
         dog.save(error => {
             console.log(error)
@@ -32,6 +89,8 @@ function createTransferTag(req, res){
 
 function createAdoptionTag(req, res){
     Dog.findById(req.params.id, function(error, dog){
+        dog.adoptable = false
+        dog.adopted = true
         dog.foreverHome.push(req.body)
         dog.save(error => {
             console.log(error)
