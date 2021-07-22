@@ -53,6 +53,7 @@ nav {
 #logo a {
   text-decoration: none;
   color: black;
+  font-family: 'Zen Tokyo Zoo', cursive;
 }
 
 main {
@@ -63,6 +64,7 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
-  margin: 10px;
+  font-size: 4rem;
+  margin: 20px 0 10px 0;
+  font-family: 'Zen Tokyo Zoo', cursive;
 }
