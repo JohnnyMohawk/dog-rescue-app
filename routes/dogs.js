@@ -12,6 +12,10 @@ router.get('/', dogsCtrl.index)
 
 router.get('/notadoptable', dogsCtrl.notReadyIndex)
 
+router.get('/adopted', dogsCtrl.adoptedIndex)
+
+router.get('/transferred', dogsCtrl.transferredIndex)
+
 router.get('/new', isLoggedIn, dogsCtrl.new)
 
 router.get('/vaccines/:dog_id', isLoggedIn, dogsCtrl.addVaccs)

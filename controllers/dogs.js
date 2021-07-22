@@ -19,6 +19,28 @@ export {
     updateVaccs,
     updateBehavior,
     notReadyIndex,
+    adoptedIndex,
+    transferredIndex,
+}
+
+function transferredIndex(req,res){
+    Dog.find({}, function(error, dogs){
+        res.render('dogs/transferredIndex', {
+            error: error,
+            dogs: dogs,
+            title: 'Specialty Case Transfers',
+        })
+    })
+}
+
+function adoptedIndex(req, res){
+    Dog.find({}, function(error, dogs){
+        res.render('dogs/adoptedIndex', {
+            error: error,
+            dogs: dogs,
+            title: 'Dogs in Forever Homes!',
+        })
+    })
 }
 
 function notReadyIndex(req, res){

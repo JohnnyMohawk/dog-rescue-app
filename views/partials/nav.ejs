@@ -3,7 +3,38 @@
   <% } %>
 </head>
 <body>
+
   <nav>
+    <% if (user) { %>
+      <a href="/auth/logout">
+        <button type="submit">LOGOUT</button>
+      </a>
+      <a 
+      href="/dogs/new" <%- title === 'Dog Intake' ? 'class="active"' : '' %>
+      ><button type="submit">ADD DOG</button></a>
+      <a 
+      href="/dogs" <%- title === 'Adoptable Dogs' ? 'class="active"' : '' %>
+      ><button type="submit">ADOPTABLE DOGS</button></a>
+      <a 
+      href="/dogs/notadoptable" <%- title === 'Not Ready for Adoption' ? 'class="active"' : '' %>
+      ><button type="submit">NOT YET ADOPTABLE DOGS</button></a>
+      <a 
+      href="/dogs/adopted" <%- title === 'Dogs in Forever Homes!' ? 'class="active"' : '' %>
+      ><button type="submit">ADOPTED DOGS</button></a>
+      <a 
+      href="/dogs/transferred" <%- title === 'Specialty Case Transfers' ? 'class="active"' : '' %>
+      ><button type="submit">TRANSFERRED DOGS</button></a>
+    <% } else { %>
+      <a href="/auth/google" class="siwg-link">
+        <button type="submit" class="siwg">
+          <img id="siwg-image" alt="Sign in with Google" />
+        </button>
+      </a>
+    <% } %>
+  </nav>
+
+
+  <!-- <nav>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">LOGOUT</button>
@@ -24,4 +55,4 @@
         </button>
       </a>
     <% } %>
-  </nav>
+  </nav> -->

@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/dogs/index.css" />
+<%- include('../partials/nav') %>
+
+<main>
+    <h1><%= title %></h1>
+    <div>
+        <% dogs.forEach((dog) => { %>
+            <% if(dog.transferred){ %> 
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= dog.name %>'s General Info:</h5>
+                        <p class="card-text">
+                            Age: <strong><%= dog.age %></strong><br>
+                            Breed: <strong><%= dog.breed %></strong><br>
+                            Weight: <strong><%= dog.weight %></strong><br>
+                
+                        </p>
+                        <a href="/dogs/<%= dog._id %>" class="card-link"><button class="btn btn-primary mb-2">DETAILS</button></a>
+                </div>
+            </div>
+            <% } %> 
+        <% }) %> 
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
