@@ -28,3 +28,58 @@
     justify-content: center;
     align-items: center;
 }
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 11px;
+}
+
+.btn-primary {
+    padding-left: 15px;
+    padding-right: 14px;
+    text-decoration: none;
+}
+
+.btn-success {
+    padding-left: 15px;
+    padding-right: 14px;
+    text-decoration: none;
+}
+
+.btn-warning {
+    padding-left: 15px;
+    padding-right: 14px;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    padding-left: 17px;
+    padding-right: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-warning {
+    padding-left: 20.5px;
+    padding-right: 20.5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.btn-info {
+    padding-left: 15px;
+    padding-right: 14px;
+    text-decoration: none;
+}
+
+.btn-dark {
+    padding-left: 15px;
+    padding-right: 14px;
+    text-decoration: none;
+}
+
+.home-link {
+    text-decoration: none;
+}
