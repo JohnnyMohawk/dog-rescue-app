@@ -4,6 +4,7 @@
 
 <main>
     <h1 class="head-title"><%= title %></h1>
+    <div class="my-form-card">
     <form action='/dogs/<%= dog._id %>/behavior?_method=PUT' method="POST">
         <div class="form-group">
             <div class="btn-group-toggle" data-toggle="buttons">
@@ -48,4 +49,6 @@
             <input type="number" name="energy" id="energy" min="1" max="5" placeholder="Energy Level 1 - 5:" required>
         </div>
         <button type="submit">Submit</button>
+    </form>
+    </div>
 </main>

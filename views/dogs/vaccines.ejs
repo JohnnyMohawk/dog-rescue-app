@@ -4,7 +4,7 @@
 
 <main>
     <h1 class="head-title"><%= title %></h1>
-    
+    <div class="my-form-card">
     <form action='/dogs/<%= dog._id %>/vaccines' method="POST">
         <div class="btn-group-toggle" data-toggle="buttons">
             <div class="form-group">
@@ -72,6 +72,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    </div>
 </main>
 
 <%- include("../partials/footer") %>
