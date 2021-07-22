@@ -21,6 +21,24 @@ export {
     notReadyIndex,
     adoptedIndex,
     transferredIndex,
+    myIntakeIndex,
+    home,
+}
+
+function home(req, res){
+    res.render('dogs/home', {
+        title: 'Home',
+    })
+}
+
+function myIntakeIndex(req, res){
+    Dog.find({}, function(error, dogs){
+        res.render('dogs/myIntakeIndex', {
+            error: error,
+            dogs: dogs,
+            title: 'My Intake History',
+        })
+    })
 }
 
 function transferredIndex(req,res){
@@ -48,7 +66,7 @@ function notReadyIndex(req, res){
         res.render('dogs/notReadyIndex', {
             error: error,
             dogs: dogs,
-            title: 'Not Ready for Adoption',
+            title: 'Not Ready to Adopt',
         })
     })
 }

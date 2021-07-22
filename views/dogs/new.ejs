@@ -3,69 +3,72 @@
 <%- include('../partials/nav') %>
 
 <main>
-    <h1><%= title %></h1>
-    <form action="/dogs" id="new-form" method="POST">
-        <div class="form-group">
-            <label for="name">Dog's Name:</label>
-            <input type="text" name="name" id="name-input" placeholder="If none given, PICK ONE!" required autocomplete="off">
-        </div>
-        <div class="form-group">
-            <label for="age">Age / Approximate Age:</label>
-            <input type="number" name="age" id="age-input" min="0" max="20" placeholder="If none given, guess" required>
-        </div>
-        <div class="form-group">
-        <label for="breed">Breed:</label>
-            <select type="text" name="breed" id="breed-input" required>
-                <option value="Mixed" selected>Mixed Breed</option>
-                <option value="Pit Bull">Pit Bull</option>
-                <option value="Rottweiler">Rottweiler</option>
-                <option value="Bulldog">Bulldog</option>
-                <option value="Labrador">Labrador</option>
-                <option value="German Shepherd">German Shepherd</option>
-                <option value="Golden Retriever">Golden Retriever</option>
-                <option value="Boxer">Boxer</option>
-                <option value="Poodle">Poodle</option>
-                <option value="Husky">Husky</option>
-                <option value="Doberman">Doberman</option>
-                <option value="Chihuahua">Chihuahua</option>
-                <option value="Collie">Collie</option>
-                <option value="Spaniel">Spaniel</option>
-                <option value="Mastiff">Mastiff</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="weight">Weight:</label>
-            <input type="number" name="weight" id="weight" min="1" max="200" placeholder="Current Weight in LBS" required>
-        </div>
-        <div class="form-group">
-            <label for="idealWeight">Ideal Weight:</label>
-            <input type="number" name="idealWeight" id="idealWeight" min="1" max="200" placeholder="Ideal Weight" required">
-        </div>
-        <div class="form-group">
-            <label for="coat">Coat:</label>
-            <input type="text" name="coat" id="coat" placeholder="Describe Coat" required autocomplete="off">
-        </div>
-        <div class="form-group">
-            <label for="fixed">Fertility Status</label>
-            <select type="text" name="fixed" id="fixed-input" required>
-                <option value="unknown" selected>Unknown</option>
-                <option value="fixed">Fixed</option>
-                <option value="intact">Intact</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="generalNotes">Enter any notes:</label>
-            <textarea name="generalNotes" id="generalNotes" cols="30" rows="5"></textarea>
-        </div>
-        <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="adoptable" name="adoptable">Adoptable
-                </label>
+    <h1 class="head-title"><%= title %></h1>
+    <div class="my-form-card">
+        
+        <form action="/dogs" id="new-form" method="POST">
+            <div class="form-group">
+                <label for="name">Dog's Name:</label>
+                <input type="text" name="name" id="name-input" placeholder="If none given, PICK ONE!" required autocomplete="off">
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary mb-2" id="newDogSubmit" value="Add Dog">Add Dog</button>
-    </form>
+            <div class="form-group">
+                <label for="age">Age / Approximate Age:</label>
+                <input type="number" name="age" id="age-input" min="0" max="20" placeholder="If none given, guess" required>
+            </div>
+            <div class="form-group">
+            <label for="breed">Breed:</label>
+                <select type="text" name="breed" id="breed-input" required>
+                    <option value="Mixed" selected>Mixed Breed</option>
+                    <option value="Pit Bull">Pit Bull</option>
+                    <option value="Rottweiler">Rottweiler</option>
+                    <option value="Bulldog">Bulldog</option>
+                    <option value="Labrador">Labrador</option>
+                    <option value="German Shepherd">German Shepherd</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="Boxer">Boxer</option>
+                    <option value="Poodle">Poodle</option>
+                    <option value="Husky">Husky</option>
+                    <option value="Doberman">Doberman</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Collie">Collie</option>
+                    <option value="Spaniel">Spaniel</option>
+                    <option value="Mastiff">Mastiff</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="number" name="weight" id="weight" min="1" max="200" placeholder="Current Weight in LBS" required>
+            </div>
+            <div class="form-group">
+                <label for="idealWeight">Ideal Weight:</label>
+                <input type="number" name="idealWeight" id="idealWeight" min="1" max="200" placeholder="Ideal Weight" required">
+            </div>
+            <div class="form-group">
+                <label for="coat">Coat:</label>
+                <input type="text" name="coat" id="coat" placeholder="Describe Coat" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="fixed">Fertility Status</label>
+                <select type="text" name="fixed" id="fixed-input" required>
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="fixed">Fixed</option>
+                    <option value="intact">Intact</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="generalNotes">Enter any notes:</label>
+                <textarea name="generalNotes" id="generalNotes" cols="30" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="checkbox" id="adoptable" name="adoptable">Adoptable
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2" id="newDogSubmit" value="Add Dog">Add Dog</button>
+        </form>
+    </div>
 </main>
 
 <%- include("../partials/footer") %>

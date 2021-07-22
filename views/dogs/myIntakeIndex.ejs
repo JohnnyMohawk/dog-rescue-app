@@ -3,10 +3,10 @@
 <%- include('../partials/nav') %>
 
 <main>
-    <h1><%= title %></h1>
+    <h1 class="head-title"><%= title %></h1>
     <div>
         <% dogs.forEach((dog) => { %>
-            <% if(dog.adoptable){ %> 
+            <% if (dog.intakeRep.equals(user?.profile._id)) { %>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title"><%= dog.name %>'s General Info:</h5>

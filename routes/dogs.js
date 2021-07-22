@@ -10,11 +10,15 @@ const router = Router()
 
 router.get('/', dogsCtrl.index)
 
+router.get('/home', dogsCtrl.home)
+
 router.get('/notadoptable', dogsCtrl.notReadyIndex)
 
 router.get('/adopted', dogsCtrl.adoptedIndex)
 
 router.get('/transferred', dogsCtrl.transferredIndex)
+
+router.get('/my-intake-history', dogsCtrl.myIntakeIndex)
 
 router.get('/new', isLoggedIn, dogsCtrl.new)
 

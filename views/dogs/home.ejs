@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/dogs/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+    <h1 class="head-title"><%= title %> </h1>
+    <a 
+    href="/dogs/new" <%- title === 'Dog Intake' ? 'class="active"' : '' %>
+    ><button type="submit">ADD DOG</button></a>
+    <a 
+    href="/dogs" <%- title === 'Adoptable Dogs' ? 'class="active"' : '' %>
+    ><button type="submit">ADOPTABLE DOGS</button></a>
+    <a 
+    href="/dogs/notadoptable" <%- title === 'Not Ready for Adoption' ? 'class="active"' : '' %>
+    ><button type="submit">NOT YET ADOPTABLE DOGS</button></a>
+    <a 
+    href="/dogs/adopted" <%- title === 'Dogs in Forever Homes!' ? 'class="active"' : '' %>
+    ><button type="submit">ADOPTED DOGS</button></a>
+    <a 
+    href="/dogs/transferred" <%- title === 'Specialty Case Transfers' ? 'class="active"' : '' %>
+    ><button type="submit">TRANSFERRED DOGS</button></a>
+    <a 
+    href="/dogs/my-intake-history" <%- title === 'My Intake History' ? 'class="active"' : '' %>
+    ><button type="submit">MY INTAKE HISTORY</button></a>
+
+</main>
+
+<%- include("../partials/footer") %>
