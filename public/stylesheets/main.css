@@ -26,10 +26,31 @@ body {
 }
 
 nav {
-  /* background-color: white; */
-  /* font-size: 1.6rem; */
+  background-color: white;
+  font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content:space-evenly;
+}
+
+#menu {
+  float: right;
+  margin: 10px;
+}
+
+#menu a {
+  margin: 10px;
+  text-decoration: none;
+}
+
+#logo {
+  float: left;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+
+#logo a {
+  text-decoration: none;
 }
 
 main {

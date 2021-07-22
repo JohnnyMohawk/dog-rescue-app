@@ -10,7 +10,10 @@
                 <% if(dog.adoptable === true){ %>
                     <strong><%= dog.name %> is ready for adoption!</strong>
                 <% }else{ %>
-                    <strong><%= dog.name %> is not ready for adoption.</strong>
+                    <strong><%= dog.name %> is not up for adoption.</strong><br>
+                <% } %>
+                <% if(dog.adopted === true){ %>
+                    <strong>Because <%= dog.name %> has been adopted!</strong><br>
                 <% } %>
             </h5>
             <p class="card-text">
@@ -21,8 +24,12 @@
                 Ideal Weight: <strong><%= `${dog.idealWeight}` %></strong><br>
                 Coat: <strong><%= `${dog.coat}` %></strong><br>
                 Fixed: <strong><%= `${dog.fixed}` %></strong></p>
+                <% if(!dog.adopted && !dog.transferred) { %> 
             <p class="card-text">
                 Intake Notes: <%= `${dog.generalNotes}` %> </p>
+
+            
+
             <% if(dog.vaccination.length) { %>
                 <% dog.vaccination.forEach(vaccs => { %> 
                     <p class="card-text">
@@ -35,10 +42,10 @@
                         Rabies Rec: <strong><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
                         Next Dose Due: <strong><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong>
                     </p>
-                    <a href="/dogs/vaccines/<%= dog._id %>/update" class="card-link"><button type="submit" class="btn btn-info">UPDATE VACCINE FORM</button></a>
+                    <a href="/dogs/vaccines/<%= dog._id %>/update" class="card-link"><button type="submit" class="btn btn-info" id="up-vaccs">UPDATE VACCINES LOG</button></a>
                 <% }) %> 
                 <% } else { %>
-                <a href="/dogs/vaccines/<%= dog._id %>" class="card-link"><button type="submit" class="btn btn-info">COMPLETE VACCINE FORM</button></a>
+                <a href="/dogs/vaccines/<%= dog._id %>" class="card-link"><button type="submit" class="btn btn-info">CREATE VACCINES LOG</button></a>
                 <% } %>
             <% if(dog.behavior.length) { %>
                 <% dog.behavior.forEach(test => { %>
@@ -70,20 +77,23 @@
                     <% } %>
                     <%= dog.name %>'s energy is a <strong><%= test.energy %></strong> / 5. 
                     </p>
-                    <a href="/dogs/behavior/<%= dog._id %>/update" class="card-link"><button type="submit" class="btn btn-info">UPDATE BEHAVIOR FORM</button></a>
+                    <a href="/dogs/behavior/<%= dog._id %>/update" class="card-link"><button type="submit" class="btn btn-info">UPDATE BEHAVIOR LOG</button></a>
             <% }) %> 
             <% } else { %>
-            <a href="/dogs/behavior/<%= dog._id %>" class="card-link"><button type="submit" class="btn btn-info">COMPLETE BEHAVIOR FORM</button></a>
+            <a href="/dogs/behavior/<%= dog._id %>" class="card-link"><button type="submit" class="btn btn-info">CREATE BEHAVIOR LOG</button></a>
             <% } %>
-            <!-- <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="adoptable" name="adoptable" <%= dog.adoptable ? "checked" : "" %>>    Update Adoptability
-                </label>
-            </div> -->
+            <% if(!dog.adopted && !dog.transferred) { %> 
+            <form action="/dogs/<%= dog._id %>/flip-adoptable?_method=PUT" method="POST">    
+                <button class="btn btn-secondary" type="submit" id="adoptable" name="adoptable" <%= dog.adoptable ? "checked" : "" %>> FLIP ADOPTABILITY
+            </form>
+            <% } %> 
             <% if(dog.adoptable){ %> 
             <a href="/dogs/adoption/<%= dog._id %>" class="card-link"><button type="submit" class="btn btn-success">PROCESS ADOPTION</button></a>
             <% } %> 
             <a href="/dogs/transfer/<%= dog._id %>" class="card-link"><button type="submit" class="btn btn-warning">PROCESS TRANSFER</button></a>
+
+            <% } %> 
+
             <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
                 <button type="submit" class="btn btn-danger">REMOVE FROM DB</button>
             </form>

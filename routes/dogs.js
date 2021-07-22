@@ -50,5 +50,7 @@ router.get('/:id', dogsCtrl.show)
 
 router.post('/', isLoggedIn, dogsCtrl.create)
 
+router.put("/:id/flip-adoptable", isLoggedIn, dogsCtrl.flipAdoptable)
+
 router.delete('/:id', isLoggedIn, dogsCtrl.delete)
 

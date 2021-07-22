@@ -2,7 +2,36 @@
 <link rel="stylesheet" href="/stylesheets/dogs/index.css" />
 <%- include('../partials/nav') %>
 
+
 <main>
+    <h1 class="head-title"><%= title %></h1>
+    <div>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-4">
+            <% dogs.forEach((dog) => { %>
+                <% if(!dog.adoptable){ %>          
+                    <div class="col">
+                        <div class="card" id="dog-card">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= dog.name %>'s General Info:</h5>
+                                <p class="card-text">
+                                    Age: <strong><%= dog.age %></strong><br>
+                                    Breed: <strong><%= dog.breed %></strong><br>
+                                    Weight: <strong><%= dog.weight %></strong><br>
+                                    <strong><%= dog.name %> is not ready for adoption.</strong>
+                                </p>
+                                <a href="/dogs/<%= dog._id %>" class="card-link"><button class="btn btn-primary mb-2">DETAILS</button></a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %> 
+            <% }) %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- <main>
     <h1 class="head-title"><%= title %></h1>
     <div>
         <% dogs.forEach((dog) => { %>
@@ -14,11 +43,7 @@
                             Age: <strong><%= dog.age %></strong><br>
                             Breed: <strong><%= dog.breed %></strong><br>
                             Weight: <strong><%= dog.weight %></strong><br>
-                            <% if(dog.adoptable === true){ %>
-                                <strong><%= dog.name %> is ready for adoption!</strong>
-                            <% }else{ %>
-                                <strong><%= dog.name %> is not ready for adoption.</strong>
-                            <% } %> 
+                            <strong><%= dog.name %> is not ready for adoption.</strong>
                         </p>
                         <a href="/dogs/<%= dog._id %>" class="card-link"><button class="btn btn-primary mb-2">DETAILS</button></a>
                 </div>
@@ -26,6 +51,6 @@
             <% } %> 
         <% }) %> 
     </div>
-</main>
+</main> -->
 
 <%- include('../partials/footer') %>

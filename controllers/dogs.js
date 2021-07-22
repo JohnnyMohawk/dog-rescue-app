@@ -23,6 +23,23 @@ export {
     transferredIndex,
     myIntakeIndex,
     home,
+    flipAdoptable,
+}
+
+function flipAdoptable(req, res){
+    console.log('working?')
+    Dog.findById(req.params.id)
+    .then(dog => {
+    dog.adoptable = !dog.adoptable
+    dog.save()
+    .then(()=> {
+        res.redirect(`/dogs/${dog._id}`)
+    })
+})
+.catch(err => {
+    console.log(err)
+    res.redirect('/dogs')
+})
 }
 
 function home(req, res){

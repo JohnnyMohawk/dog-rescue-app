@@ -19,6 +19,8 @@
 }
 
 .my-form-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 30rem;
     background-color: white;
     border-radius: 4px;

@@ -6,15 +6,13 @@
 
   <nav>
     <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">LOGOUT</button>
-      </a>
-      <a 
-      href="/dogs/new" <%- title === 'Dog Intake' ? 'class="active"' : '' %>
-      ><button type="submit">ADD DOG</button></a>
-      <a 
-      href="/dogs/home" <%- title === 'Home' ? 'class="active"' : '' %>
-      ><button type="submit">HOME</button></a>
+      <div id="menu">
+      <a href="/auth/logout">LOGOUT</a>
+      <a href="/dogs/new" <%- title === 'Dog Intake' ? 'class="active"' : '' %>>ADD DOG</a>
+      </div>
+      <div id="logo">
+      <a href="/dogs/home" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+      </div>
       <!-- <a 
       href="/dogs" <%- title === 'Adoptable Dogs' ? 'class="active"' : '' %>
       ><button type="submit">ADOPTABLE DOGS</button></a>
