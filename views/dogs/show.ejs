@@ -27,7 +27,7 @@
                         Rabies Rec: <strong><%= `${vaccs.rabiesRec.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong><br>
                         Next Dose Due: <strong><%= `${vaccs.rabiesDueNext.toUTCString().split(' ').slice(1, 4).join(' ')}` %></strong>
                     </p>
-                    <a href="/dogs/vaccines/<%= dog._id %>/update" class="card-link">UPDATE VACCINE FORM</a>
+                    <a href="/dogs/vaccines/<%= dog._id %>/update" class="card-link"><button type="submit">UPDATE VACCINE FORM</button></a>
                 <% }) %> 
                 <% } else { %>
                 <a href="/dogs/vaccines/<%= dog._id %>" class="card-link"><button type="submit">COMPLETE VACCINE FORM</button></a>

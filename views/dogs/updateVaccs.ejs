@@ -4,48 +4,73 @@
 
 <main>
     <h1><%= title %></h1>
-    <form action='/dogs/<%= dog._id %>/behavior' method="POST">
-        <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
+    <form action='/dogs/<%= dog._id %>/vaccines?_method=PUT' method="POST">
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
                 <label class="btn btn-secondary active">
-                    <input type="checkbox" id="humans" name="humans">   Friendly with humans?
+                    <input type="checkbox" id="parvo" name="parvo">    Parvo Vaccine:
                 </label>
             </div>
         </div>
         <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
+            <label for="parvoRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="parvoRec" name="parvoRec">
+        </div>
+        <div class="form-group">
+            <label for="parvoDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="parvoDueNext" name="parvoDueNext">
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
                 <label class="btn btn-secondary active">
-                    <input type="checkbox" id="kids" name="kids">   Friendly with kids?
+                    <input type="checkbox" id="distemper" name="distemper">    Distemper Vaccine:
                 </label>
             </div>
         </div>
         <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
+            <label for="distRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="distRec" name="distRec">
+        </div>
+        <div class="form-group">
+            <label for="distDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="distDueNext" name="distDueNext">
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
                 <label class="btn btn-secondary active">
-                    <input type="checkbox" id="otherDogs" name="otherDogs">   Good with other dogs?
+                    <input type="checkbox" id="hepatitis" name="hepatitis">    Hepatitis Vaccine:
                 </label>
             </div>
         </div>
         <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
+            <label for="hepRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="hepRec" name="hepRec">
+        </div>
+        <div class="form-group">
+            <label for="hepDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="hepDueNext" name="hepDueNext">
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
                 <label class="btn btn-secondary active">
-                    <input type="checkbox" id="cats" name="cats">   Good with cats?
+                    <input type="checkbox" id="rabies" name="rabies">    Rabies Vaccine:
                 </label>
             </div>
         </div>
         <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="houseBroken" name="houseBroken">   Friendly with humans?
-                </label>
-            </div>
+            <label for="rabiesRec">Vaccine Received</label>
+            <input type="date" class="form-control" id="rabiesRec" name="rabiesRec">
         </div>
         <div class="form-group">
-            <label for="behaviorNotes">Enter any notes:</label>
-            <textarea name="behaviorNotes" id="behaviorNotes" cols="30" rows="5"></textarea>
+            <label for="rabiesDueNext">Next Dose Due</label>
+            <input type="date" class="form-control" id="rabiesDueNext" name="rabiesDueNext">
         </div>
         <div class="form-group">
-            <input type="number" name="energy" id="energy" min="1" max="5" placeholder="Energy Level 1 - 5:" required>
+            <label for="healthNotes">Enter any notes:</label>
+            <textarea name="healthNotes" id="healthNotes" cols="30" rows="5"></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </main>
+
+<%- include("../partials/footer") %>

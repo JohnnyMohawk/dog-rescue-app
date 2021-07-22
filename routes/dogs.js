@@ -18,7 +18,7 @@ router.get('/vaccines/:dog_id/update', isLoggedIn, dogsCtrl.addUpdateVaccs)
 
 router.get('/behavior/:dog_id', isLoggedIn, dogsCtrl.addBehavior)
 
-router.get('/dogs/behavior/:dog_id/update', isLoggedIn, dogsCtrl.addUpdateBehavior)
+router.get('/behavior/:dog_id/update', isLoggedIn, dogsCtrl.addUpdateBehavior)
 
 router.get('/adoption/:dog_id', isLoggedIn, dogsCtrl.procAdoption)
 
@@ -26,7 +26,11 @@ router.get('/transfer/:dog_id', isLoggedIn, dogsCtrl.procTransfer)
 
 router.post('/:id/vaccines', isLoggedIn, dogsCtrl.createVaccsLog)
 
+router.put('/:id/vaccines', isLoggedIn, dogsCtrl.updateVaccs)
+
 router.post('/:id/behavior', isLoggedIn, dogsCtrl.createBehaviorTag)
+
+router.put('/:id/behavior', isLoggedIn, dogsCtrl.updateBehavior)
 
 router.post('/:id/adoption', isLoggedIn, dogsCtrl.createAdoptionTag)
 

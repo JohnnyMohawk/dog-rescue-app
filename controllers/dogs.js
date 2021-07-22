@@ -23,7 +23,7 @@ export {
 function addUpdateVaccs(req, res){
     console.log('working?')
     Dog.findById(req.params.dog_id, function (err, dog) {
-        res.render('dogs/vaccines', {
+        res.render('dogs/updateVaccs', {
             title: 'Vaccination Form',
             dog: dog,
             err: err,
@@ -34,7 +34,7 @@ function addUpdateVaccs(req, res){
 function addUpdateBehavior(req, res){
     console.log('working')
     Dog.findById(req.params.dog_id, function (err, dog) {
-        res.render('dogs/behavior', {
+        res.render('dogs/updateBehavior', {
             title: 'Behavioral Form',
             dog: dog,
             err: err,
@@ -50,8 +50,8 @@ function updateBehavior(req, res){
     req.body.cats = !!req.body.cats
     req.body.houseBroken = !!req.body.houseBroken
     Dog.findById(req.params.id, function(error, dog){
-        dog.behavior.push(req.body)
-        dog.update(error => {
+        dog.behavior = req.body
+        dog.save(error => {
             res.redirect(`/dogs/${dog._id}`)
         })
     })
@@ -64,8 +64,8 @@ function updateVaccs(req, res){
     req.body.hepatitis = !!req.body.hepatitis
     req.body.rabies = !!req.body.rabies
     Dog.findById(req.params.id, function(error, dog){
-        dog.vaccination.push(req.body)
-        dog.update(error => {
+        dog.vaccination = req.body
+        dog.save(error => {
             res.redirect(`/dogs/${dog._id}`)
         })
     })
@@ -75,7 +75,7 @@ function createTransferTag(req, res){
     Dog.findById(req.params.id, function(error, dog){
         dog.adoptable = false
         dog.transferred = true
-        dog.transferRescue.push(req.body)
+        dog.transferRescue = req.body
         dog.save(error => {
             console.log(error)
             res.redirect(`/dogs/${dog._id}`)
@@ -91,7 +91,7 @@ function createAdoptionTag(req, res){
     Dog.findById(req.params.id, function(error, dog){
         dog.adoptable = false
         dog.adopted = true
-        dog.foreverHome.push(req.body)
+        dog.foreverHome = req.body
         dog.save(error => {
             console.log(error)
             res.redirect(`/dogs/${dog._id}`)
@@ -156,7 +156,7 @@ function createVaccsLog(req, res){
     req.body.hepatitis = !!req.body.hepatitis
     req.body.rabies = !!req.body.rabies
     Dog.findById(req.params.id, function(error, dog){
-        dog.vaccination.push(req.body)
+        dog.vaccination = req.body
         dog.save(error => {
             res.redirect(`/dogs/${dog._id}`)
         })
@@ -170,7 +170,7 @@ function createBehaviorTag(req, res){
     req.body.cats = !!req.body.cats
     req.body.houseBroken = !!req.body.houseBroken
     Dog.findById(req.params.id, function(error, dog){
-        dog.behavior.push(req.body)
+        dog.behavior = req.body
         dog.save(error => {
             res.redirect(`/dogs/${dog._id}`)
         })
@@ -211,6 +211,7 @@ function index(req, res){
 
 function show(req, res){
     Dog.findById(req.params.id, function(error, dog){
+        console.log(dog)
         res.render('dogs/show', {
             title: 'Dog Details',
             dog: dog,
