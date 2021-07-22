@@ -10,10 +10,13 @@
       </a>
       <a 
       href="/dogs/new" <%- title === 'Dog Intake' ? 'class="active"' : '' %>
-    ><button type="submit">ADD DOG</button></a>
-    <a 
-      href="/dogs" <%- title === 'All Dogs' ? 'class="active"' : '' %>
-    ><button type="submit">ALL DOGS</button></a>
+      ><button type="submit">ADD DOG</button></a>
+      <a 
+      href="/dogs" <%- title === 'Adoptable Dogs' ? 'class="active"' : '' %>
+      ><button type="submit">ADOPTABLE DOGS</button></a>
+      <a 
+      href="/dogs/notadoptable" <%- title === 'Not Ready for Adoption' ? 'class="active"' : '' %>
+      ><button type="submit">NOT YET ADOPTABLE DOGS</button></a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">

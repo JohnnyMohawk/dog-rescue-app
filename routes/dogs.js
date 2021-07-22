@@ -10,6 +10,8 @@ const router = Router()
 
 router.get('/', dogsCtrl.index)
 
+router.get('/notadoptable', dogsCtrl.notReadyIndex)
+
 router.get('/new', isLoggedIn, dogsCtrl.new)
 
 router.get('/vaccines/:dog_id', isLoggedIn, dogsCtrl.addVaccs)

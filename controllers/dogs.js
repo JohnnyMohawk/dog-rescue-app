@@ -18,6 +18,17 @@ export {
     addUpdateBehavior,
     updateVaccs,
     updateBehavior,
+    notReadyIndex,
+}
+
+function notReadyIndex(req, res){
+    Dog.find({}, function(error, dogs){
+        res.render('dogs/notReadyIndex', {
+            error: error,
+            dogs: dogs,
+            title: 'Not Ready for Adoption',
+        })
+    })
 }
 
 function addUpdateVaccs(req, res){
@@ -204,7 +215,7 @@ function index(req, res){
         res.render('dogs/index', {
             error: error,
             dogs: dogs,
-            title: 'All Dogs',
+            title: 'Adoptable Dogs',
         })
     })
 }
