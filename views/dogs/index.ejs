@@ -6,6 +6,7 @@
     <h1><%= title %></h1>
     <div>
         <% dogs.forEach((dog) => { %>
+            <% if(dog.adoptable){ %> 
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title"><%= dog.name %>'s General Info:</h5>
@@ -20,42 +21,11 @@
                             <% } %> 
                         </p>
                         <a href="/dogs/<%= dog._id %>" class="card-link"><button class="btn btn-primary mb-2">DETAILS</button></a>
-                        <!-- <form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
-                        <button type="submit">DELETE</button>
-                        </form> -->
                 </div>
             </div>
+            <% } %> 
         <% }) %> 
-
     </div>
-    <!-- <h1><%= title %></h1>
-    <table id="list">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Breed</th>
-                <th>Adoptable</th>
-                <th>Details</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% dogs.forEach((dog) => { %>
-            <tr>
-                <td><%= dog.name %></td>
-                <td><%= dog.age %></td>
-                <td><%= dog.breed %></td>
-                <td><%= dog.adoptable %></td>
-                <td><a href="/dogs/<%= dog._id %>">DETAILS</a></td>
-                <td><form action="/dogs/<%= dog._id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit">DELETE</button>
-                </form></td>
-            </tr>
-            <% }) %> 
-        </tbody>
-    </table> -->
-
 </main>
 
 <%- include('../partials/footer') %>
