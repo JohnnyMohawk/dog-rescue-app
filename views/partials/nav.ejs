@@ -6,12 +6,12 @@
 
   <nav>
     <% if (user) { %>
+      <div id="logo">
+      <a href="/dogs/home"><i class="fas fa-paw"></i> Dog-Rescue-O-Matic</a>
+      </div>
       <div id="menu">
       <a href="/dogs/new">ADD DOG</a>
       <a href="/auth/logout">LOGOUT</a>
-      </div>
-      <div id="logo">
-      <a href="/dogs/home"><i class="fas fa-paw"></i> Dog-Rescue-O-Matic</a>
       </div>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">

@@ -29,8 +29,7 @@ nav {
   background-color: white;
   font-size: 1.6rem;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content:space-evenly;
+  justify-content:space-around;
 }
 
 #menu {
@@ -45,8 +44,6 @@ nav {
 }
 
 #logo {
-  float: left;
-  margin-right: 150px;
   margin-top: 10px;
 }
 
