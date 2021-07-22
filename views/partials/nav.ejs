@@ -7,11 +7,11 @@
   <nav>
     <% if (user) { %>
       <div id="menu">
-      <a href="/auth/logout">LOGOUT</a>
       <a href="/dogs/new" <%- title === 'Dog Intake' ? 'class="active"' : '' %>>ADD DOG</a>
+      <a href="/auth/logout">LOGOUT</a>
       </div>
       <div id="logo">
-      <a href="/dogs/home" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+      <a href="/dogs/home" <%- title === 'Home' ? 'class="active"' : '' %>><i class="fas fa-paw"></i> Dog-Rescue-O-Matic</a>
       </div>
       <!-- <a 
       href="/dogs" <%- title === 'Adoptable Dogs' ? 'class="active"' : '' %>
