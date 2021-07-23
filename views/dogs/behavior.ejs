@@ -4,48 +4,50 @@
 
 <main>
     <h1 class="head-title"><%= title %></h1>
+    <div class="my-form-card">
     <form action='/dogs/<%= dog._id %>/behavior' method="POST">
         <div class="form-group">
             <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
+                <label class="btn btn-secondary">
                     <input type="checkbox" id="humans" name="humans">   Friendly with humans?
                 </label>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="kids" name="kids">   Friendly with kids?
-                </label>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="otherDogs" name="otherDogs">   Good with other dogs?
-                </label>
+            <div class="form-group">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                        <input type="checkbox" id="kids" name="kids">   Friendly with kids?
+                    </label>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="cats" name="cats">   Good with cats?
-                </label>
+            <div class="form-group">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                        <input type="checkbox" id="otherDogs" name="otherDogs">   Good with other dogs?
+                    </label>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="checkbox" id="houseBroken" name="houseBroken">   Potty Trained?
-                </label>
+            <div class="form-group">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                        <input type="checkbox" id="cats" name="cats">   Good with cats?
+                    </label>
+                </div>
             </div>
+            <div class="form-group">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                        <input type="checkbox" id="houseBroken" name="houseBroken">   Potty Trained?
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="behaviorNotes">Enter any notes:</label>
+                <textarea name="behaviorNotes" id="behaviorNotes" cols="30" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="number" name="energy" id="energy" min="1" max="5" placeholder="Energy Level 1 - 5:" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="behave-submit">Submit</button>
         </div>
-        <div class="form-group">
-            <label for="behaviorNotes">Enter any notes:</label>
-            <textarea name="behaviorNotes" id="behaviorNotes" cols="30" rows="5"></textarea>
-        </div>
-        <div class="form-group">
-            <input type="number" name="energy" id="energy" min="1" max="5" placeholder="Energy Level 1 - 5:" required>
-        </div>
-        <button type="submit">Submit</button>
 </main>

@@ -51,12 +51,12 @@
                 <% dog.behavior.forEach(test => { %>
                     <p class="card-text">
                     <% if(test.humans === true){ %>
-                        <%= dog.name %> is <strong>FRIENDLY</strong> with humans!
+                        <%= dog.name %> is <strong>FRIENDLY</strong> with humans!<br>
                     <% }else{ %>
                         <%= dog.name %> is shy with people.<br>
                     <% } %>
                     <% if(test.kids === true){ %>
-                        <%= dog.name %> is <strong>GOOD</strong> with children!
+                        <%= dog.name %> is <strong>GOOD</strong> with children!<br>
                     <% }else{ %>
                         <%= dog.name %> is afraid of kids.<br>
                     <% } %>
@@ -71,11 +71,11 @@
                         <%= dog.name %> doesn't like cats.<br>
                     <% } %>
                     <% if(test.houseBroken === true){ %>
-                        <%= dog.name %> is <strong>HOUSE TRAINED</strong>!
+                        <%= dog.name %> is <strong>HOUSE TRAINED</strong>!<br>
                     <% }else{ %>
                         <%= dog.name %> needs training.<br>
                     <% } %>
-                    <%= dog.name %>'s energy is a <strong><%= test.energy %></strong> / 5. 
+                    <%= dog.name %>'s energy is a <strong><%= test.energy %></strong> / 5.<br>
                     </p>
                     <a href="/dogs/behavior/<%= dog._id %>/update" class="card-link"><button type="submit" class="btn btn-info">UPDATE BEHAVIOR LOG</button></a>
             <% }) %> 

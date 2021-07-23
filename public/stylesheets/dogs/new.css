@@ -1,6 +1,3 @@
-
-
-/* .btn-group-toggle, */
 .form-group {
     display: grid;
     grid-template-columns: repeat(1, minmax(auto, 25rem));
@@ -23,6 +20,7 @@
 
 .my-form-card {
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 20px;
     width: 30rem;
@@ -100,4 +98,24 @@
 .btn-group-toggle {
     margin-left: -15px;
     margin-right: -6px;
+    margin-bottom: -15px;
+}
+
+#energy {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#behave-submit {
+    font-size: 2rem;
+    padding-left: 90px;
+    padding-right: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3px;
+}
+
+#healthNotes{
+    margin-bottom: 15px;
 }
