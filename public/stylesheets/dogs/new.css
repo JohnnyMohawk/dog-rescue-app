@@ -1,6 +1,6 @@
 
 
-.btn-group-toggle,
+/* .btn-group-toggle, */
 .form-group {
     display: grid;
     grid-template-columns: repeat(1, minmax(auto, 25rem));
@@ -16,13 +16,15 @@
 #newDogSubmit {
     width: 25rem;
     padding: 5px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     font-size: 2rem;
+    margin-left: 0;
 }
 
 .my-form-card {
+    padding-left: 10px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     width: 30rem;
     background-color: white;
     border-radius: 4px;
@@ -93,4 +95,9 @@
 
 .home-link {
     text-decoration: none;
+}
+
+.btn-group-toggle {
+    margin-left: -15px;
+    margin-right: -6px;
 }

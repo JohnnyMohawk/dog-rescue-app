@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #A2DBFA;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -40,7 +40,7 @@ nav {
 #menu a {
   margin: 10px;
   text-decoration: none;
-  color: black;
+  color: #053742;
 }
 
 #logo {
@@ -49,7 +49,7 @@ nav {
 
 #logo a {
   text-decoration: none;
-  color: black;
+  color: #053742;
   font-family: 'Zen Tokyo Zoo', cursive;
 }
 
@@ -61,7 +61,8 @@ main {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 5rem;
+  color: #053742;
   margin: 20px 0 10px 0;
   font-family: 'Zen Tokyo Zoo', cursive;
 }
