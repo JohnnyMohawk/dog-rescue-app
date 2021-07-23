@@ -119,3 +119,8 @@
 #healthNotes{
     margin-bottom: 15px;
 }
+
+#adoptEmail,
+#rescueEmail {
+    margin-bottom: 15px;
+}
