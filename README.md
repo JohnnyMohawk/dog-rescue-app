@@ -20,14 +20,12 @@ Running a dog rescue can be ruff… There is a great deal of information to main
 
 <img src="public/images/screenshots/my-intake-ss.png" width=100% height=auto>
 
-<img src="public/images/screenshots/" width=100% height=auto>
-
 ## Getting Started
 
-The app is deployed [here](https://dog-o-matic-rescue-app.herokuapp.com/dogs)
+The app is deployed [HERE](https://dog-o-matic-rescue-app.herokuapp.com/dogs)
 
 ## Languages
-<img src="public/assets/readme/languagesbg.png" width=100% height=auto alt="languages">
+<img src="public/images/screenshots/languages.png" width=100% height=auto>
 * HTML * CSS * JavaScript
 
 ## Built With
