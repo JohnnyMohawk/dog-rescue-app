@@ -4,7 +4,7 @@ Dog-Rescue-O-Matic is a MEN stack application to aid dog rescues, maintain and u
 
 ## About
 
-Running a dog rescue can be ruff… There is a great deal of information to maintain for each dog in the system and monitoring changes to that information can be extremely important for ensuring a dog’s health and wellbeing and can increase their chances of finding a forever home! Most dog rescues in the U.S. are entirely volunteer based and do not have a centralized shelter or office. Maintaining all of this information in this type of operating environment often leads to unorganized and disjointed data spread across various text documents and spreadsheets. Dog-Rescue-O-Matic will keep you, your staff, and your volunteers from going barking mad, by keeping all of this data in the cloud and allowing access to view and edit this info from any smartphone or computer.
+Running a dog rescue can be ruff… There is a great deal of information to maintain for each dog in the system, and monitoring changes to that information can be extremely important for ensuring a dog’s health and wellbeing, and can increase their chances of finding a forever home! Most dog rescues in the U.S. are entirely volunteer based and do not have a centralized shelter or office. Maintaining all of this information in this type of operating environment often leads to unorganized and disjointed data spread across various text documents and spreadsheets. Dog-Rescue-O-Matic will keep rescue staff and volunteers from going barking mad, by keeping all of this data in the cloud and allowing access to view and edit this info from any smartphone or computer.
 
 ## Screenshots
 
